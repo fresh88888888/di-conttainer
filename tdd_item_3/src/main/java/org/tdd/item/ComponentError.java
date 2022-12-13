@@ -22,7 +22,6 @@ class ComponentError extends Error {
         return new ComponentError(MessageFormat.format("Ambiguous injectable constructors: {0}", component));
     }
 
-
     public static ComponentError noDefaultConstructor(Class<?> component) {
         return new ComponentError(MessageFormat.format("No default constructors: {0}", component));
     }
