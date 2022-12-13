@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-12-13T07:13:06" hostname="umbrella" time="0.008">
+  <properties/>
+  <testcase name="should_throw_exception_if_component_is_interface()" classname="org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors" time="0.001"/>
+  <testcase name="should_throw_exception_if_component__is_abstract()" classname="org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors" time="0.0"/>
+  <testcase name="should_throw_exception_if_no_inject_nor_default_constructors_provided()" classname="org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors" time="0.001"/>
+  <testcase name="should_throw_exception_if_multi_inject_constructors_provided()" classname="org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

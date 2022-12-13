@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.tdd.item.InjectTest$FieldInjection$WithQualifier" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-13T07:13:06" hostname="umbrella" time="0.008">
+  <properties/>
+  <testcase name="should_throw_exception_if_multi_qualifiers_given()" classname="org.tdd.item.InjectTest$FieldInjection$WithQualifier" time="0.002"/>
+  <testcase name="should_include_qualifier_with_dependency()" classname="org.tdd.item.InjectTest$FieldInjection$WithQualifier" time="0.002"/>
+  <testcase name="should_inject_dependency_with_qualifier_via_field()" classname="org.tdd.item.InjectTest$FieldInjection$WithQualifier" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

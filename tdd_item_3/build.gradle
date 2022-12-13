@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group 'org.tdd.item'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.9.0'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation("jakarta.inject:jakarta.inject-api:2.0.1")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${junitVersion}")
+    testRuntimeOnly('org.junit.platform:junit-platform-runner:1.9.0')
+    testImplementation('org.mockito:mockito-core:4.8.0')
+    testImplementation("jakarta.inject:jakarta.inject-tck:2.0.1")
+}
+
+test {
+    useJUnitPlatform()
+}

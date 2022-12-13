@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.tdd.item.ContextTest$TypeBinding" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-12-13T07:13:05" hostname="umbrella" time="0.028">
+  <properties/>
+  <testcase name="supporting Constructor Injection" classname="org.tdd.item.ContextTest$TypeBinding" time="0.016"/>
+  <testcase name="supporting Field Injection" classname="org.tdd.item.ContextTest$TypeBinding" time="0.001"/>
+  <testcase name="supporting Method Injection" classname="org.tdd.item.ContextTest$TypeBinding" time="0.001"/>
+  <testcase name="should_not_retrieve_bind_type_as_unsupported_container()" classname="org.tdd.item.ContextTest$TypeBinding" time="0.001"/>
+  <testcase name="should_bind_type_to_a_specific_instance()" classname="org.tdd.item.ContextTest$TypeBinding" time="0.001"/>
+  <testcase name="should_retrieve_empty_for_unbind_type()" classname="org.tdd.item.ContextTest$TypeBinding" time="0.0"/>
+  <testcase name="should_retrieve_bind_type_as_provider()" classname="org.tdd.item.ContextTest$TypeBinding" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
