@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.InjectTest$FieldInjection$Injection" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-13T07:13:06" hostname="umbrella" time="0.012">
+<testsuite name="org.tdd.item.InjectTest$FieldInjection$Injection" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:26" hostname="umbrella" time="0.007">
   <properties/>
   <testcase name="should_inject_provider_via_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
-  <testcase name="should_include_dependency_from_field_dependencies()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.002"/>
-  <testcase name="should_inject_dependency_via_subclass_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.002"/>
+  <testcase name="should_include_dependency_from_field_dependencies()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
+  <testcase name="should_inject_dependency_via_subclass_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
   <testcase name="should_include_provider_type_from_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
-  <testcase name="should_inject_dependency_via_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.002"/>
+  <testcase name="should_inject_dependency_via_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

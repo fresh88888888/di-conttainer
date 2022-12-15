@@ -78,7 +78,6 @@ public class SpikeTest {
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
             Stream<Class<?>> stream = application.getClasses().stream().filter(c -> c.isAnnotationPresent(Path.class));
             Object resource = dispatch(stream);
-            System.out.println("in servlet");
             MessageBodyWriter<Object> writer = (MessageBodyWriter<Object>) providers.getMessageBodyWriter(resource.getClass(), null, null, null);
             writer.writeTo(resource, null, null, null, null, null, resp.getOutputStream());
         }

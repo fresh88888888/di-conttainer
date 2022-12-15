@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.ContextTest$TypeBinding$WithQualifier" tests="6" skipped="1" failures="0" errors="0" timestamp="2022-12-13T07:13:05" hostname="umbrella" time="0.013">
+<testsuite name="org.tdd.item.ContextTest$TypeBinding$WithQualifier" tests="6" skipped="1" failures="0" errors="0" timestamp="2022-12-13T09:20:25" hostname="umbrella" time="0.015">
   <properties/>
-  <testcase name="should_throw_exception_if_illegal_qualifier_given_to_instance()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.002"/>
+  <testcase name="should_throw_exception_if_illegal_qualifier_given_to_instance()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.001"/>
   <testcase name="should_retrieve_bind_type_provider()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.001">
     <skipped/>
   </testcase>
-  <testcase name="should_throw_exception_if_illegal_qualifier_given_to_component()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.002"/>
-  <testcase name="should_bind_component_with_multi_qualifier()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.001"/>
+  <testcase name="should_throw_exception_if_illegal_qualifier_given_to_component()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.001"/>
+  <testcase name="should_bind_component_with_multi_qualifier()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.002"/>
   <testcase name="should_retrieve_empty_if_no_matched_qualifier()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.002"/>
-  <testcase name="should_bind_instance_with_multi_qualifier()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.001"/>
+  <testcase name="should_bind_instance_with_multi_qualifier()" classname="org.tdd.item.ContextTest$TypeBinding$WithQualifier" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
