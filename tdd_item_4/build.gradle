@@ -24,7 +24,7 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    implementation project(":tdd_item_3")
+    implementation(project(":tdd_item_3"))
     implementation('jakarta.inject:jakarta.inject-api:2.0.1')
     implementation('jakarta.ws.rs:jakarta.ws.rs-api:3.1.0')
     implementation('jakarta.servlet:jakarta.servlet-api:5.0.0')
