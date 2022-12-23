@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/OutboundResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/Runtime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/classes/java/main/org/tdd/item/ContextConfig$DSL$Declaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/classes/java/main/org/tdd/item/ContextConfig$DSL$Declaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.atinject.tck.auto.Convertible$PrivateTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.atinject.tck.auto.Convertible$PrivateTests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$DSL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$DSL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$DependencyChecked$WithQualifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$DependencyChecked$WithQualifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$DependencyChecked.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$DependencyChecked.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding$WithQualifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding$WithQualifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding$WithScope.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding$WithScope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.ContextTest$TypeBinding.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$ConstructorInjection$Injection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$ConstructorInjection$Injection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$ConstructorInjection$WithQualifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$ConstructorInjection$WithQualifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$FieldInjection$IllegalInjectFields.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$FieldInjection$IllegalInjectFields.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$FieldInjection$Injection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$FieldInjection$Injection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$FieldInjection$WithQualifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$FieldInjection$WithQualifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$MethodInjection$IllegalInjectMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$MethodInjection$IllegalInjectMethods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$MethodInjection$Injection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$MethodInjection$Injection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$MethodInjection$WithQualifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.InjectTest$MethodInjection$WithQualifier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.JakartaTCK.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/classes/org.tdd.item.JakartaTCK.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/packages/org.atinject.tck.auto.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/packages/org.atinject.tck.auto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/packages/org.tdd.item.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/reports/tests/test/packages/org.tdd.item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.atinject.tck.auto.Convertible$PrivateTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.atinject.tck.auto.Convertible$PrivateTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$DSL.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$DSL.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$DependencyChecked$WithQualifier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$DependencyChecked$WithQualifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$DependencyChecked.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$DependencyChecked.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding$WithQualifier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding$WithQualifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding$WithScope.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding$WithScope.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.ContextTest$TypeBinding.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$ConstructorInjection$IllegalInjectConstructors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$ConstructorInjection$Injection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$ConstructorInjection$Injection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$ConstructorInjection$WithQualifier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$ConstructorInjection$WithQualifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$FieldInjection$IllegalInjectFields.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$FieldInjection$IllegalInjectFields.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$FieldInjection$Injection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$FieldInjection$Injection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$FieldInjection$WithQualifier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$FieldInjection$WithQualifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$MethodInjection$IllegalInjectMethods.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$MethodInjection$IllegalInjectMethods.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$MethodInjection$Injection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$MethodInjection$Injection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$MethodInjection$WithQualifier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.InjectTest$MethodInjection$WithQualifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.JakartaTCK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/TEST-org.tdd.item.JakartaTCK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/tdd/item/ContextConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/tdd/item/ContextConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SpikeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SpikeTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/../tdd_item_3">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/../tdd_item_4">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IwoNpZ4irpeDczBVWVPzofZvdv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.44252872"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="org.ws.tdd.rest" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.ws.tdd.rest" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpikeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.SpikeTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.SpikeTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="" />
+      <created>1671101969610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671101969610</updated>
+      <workItem from="1671101970944" duration="14176000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../tdd_item_3/src/main/java/org/tdd/item/InjectionProvider.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
