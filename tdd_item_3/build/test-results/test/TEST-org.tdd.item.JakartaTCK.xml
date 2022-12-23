@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.JakartaTCK" tests="46" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:26" hostname="umbrella" time="0.019">
+<testsuite name="org.tdd.item.JakartaTCK" tests="46" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.019">
   <properties/>
   <testcase name="testOverriddenPublicMethodInjectedOnlyOnce" classname="org.tdd.item.JakartaTCK" time="0.001"/>
   <testcase name="testPackagePrivateMethodNotInjectedWhenOverrideLacksAnnotation" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testProviderReturnedValues" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testQualifiersNotInheritedFromOverriddenMethod" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testPublicNoArgsConstructorInjected" classname="org.tdd.item.JakartaTCK" time="0.001"/>
+  <testcase name="testPublicNoArgsConstructorInjected" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testCircularlyDependentSingletons" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testPublicMethodNotInjectedWhenOverrideNotAnnotated" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testPackagePrivateMethodInjectedDifferentPackages" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testSupertypeMethodInjectedBeforeSubtypeMethods" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testFieldInjectedProviderYieldsSingleton" classname="org.tdd.item.JakartaTCK" time="0.001"/>
+  <testcase name="testFieldInjectedProviderYieldsSingleton" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testConstructorInjectedProviderYieldsSingleton" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testPackagePrivateMethodInjectedEvenWhenSimilarMethodLacksAnnotation" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testOverriddenPackagePrivateMethodInjectedOnlyOnce" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testNonVoidMethodInjected" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testOverriddenPublicMethodNotInjected" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testMethodInjectedProviderYieldsDistinctValues" classname="org.tdd.item.JakartaTCK" time="0.001"/>
+  <testcase name="testOverriddenPublicMethodNotInjected" classname="org.tdd.item.JakartaTCK" time="0.001"/>
+  <testcase name="testMethodInjectedProviderYieldsDistinctValues" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testProtectedMethodNotInjectedWhenOverrideNotAnnotated" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testSimilarPackagePrivateMethodInjectedOnlyOnce" classname="org.tdd.item.JakartaTCK" time="0.0"/>
+  <testcase name="testSimilarPackagePrivateMethodInjectedOnlyOnce" classname="org.tdd.item.JakartaTCK" time="0.001"/>
   <testcase name="testConstructorInjectedProviderYieldsDistinctValues" classname="org.tdd.item.JakartaTCK" time="0.002"/>
   <testcase name="testOverriddingMixedWithPackagePrivate2" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testOverriddingMixedWithPackagePrivate3" classname="org.tdd.item.JakartaTCK" time="0.0"/>
@@ -30,7 +30,7 @@
   <testcase name="testSubtypeFieldsInjected" classname="org.tdd.item.JakartaTCK" time="0.001"/>
   <testcase name="testSupertypeFieldsInjected" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testConstructorInjectionWithValues" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testSingletonAnnotationNotInheritedFromSupertype" classname="org.tdd.item.JakartaTCK" time="0.001"/>
+  <testcase name="testSingletonAnnotationNotInheritedFromSupertype" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testConstructorInjectionWithProviders" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testFieldInjectedProviderYieldsDistinctValues" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testPackagePrivateMethodNotInjectedWhenSupertypeHasAnnotatedSimilarMethod" classname="org.tdd.item.JakartaTCK" time="0.0"/>
@@ -42,7 +42,7 @@
   <testcase name="testMethodInjectedProviderYieldsSingleton" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testOverriddenProtectedMethodInjection" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testMethodInjectionWithValues" classname="org.tdd.item.JakartaTCK" time="0.0"/>
-  <testcase name="testSupertypeMethodsInjectedBeforeSubtypeFields" classname="org.tdd.item.JakartaTCK" time="0.0"/>
+  <testcase name="testSupertypeMethodsInjectedBeforeSubtypeFields" classname="org.tdd.item.JakartaTCK" time="0.001"/>
   <testcase name="testSupertypeMethodsInjected" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testMethodWithMultipleParametersInjected" classname="org.tdd.item.JakartaTCK" time="0.0"/>
   <testcase name="testFieldInjectionWithProviders" classname="org.tdd.item.JakartaTCK" time="0.001"/>

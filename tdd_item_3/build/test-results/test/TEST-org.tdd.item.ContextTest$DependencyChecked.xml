@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.ContextTest$DependencyChecked" tests="45" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:25" hostname="umbrella" time="0.086">
+<testsuite name="org.tdd.item.ContextTest$DependencyChecked" tests="45" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.111">
   <properties/>
-  <testcase name="indirect cyclic dependency between Inject constructor Inject Constructor and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.004"/>
-  <testcase name="indirect cyclic dependency between Inject constructor Inject Constructor and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
+  <testcase name="indirect cyclic dependency between Inject constructor Inject Constructor and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.006"/>
+  <testcase name="indirect cyclic dependency between Inject constructor Inject Constructor and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject constructor Inject Constructor and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject constructor Inject Field and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject constructor Inject Field and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
@@ -10,9 +10,9 @@
   <testcase name="indirect cyclic dependency between Inject constructor Inject Method and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject constructor Inject Method and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject constructor Inject Method and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="indirect cyclic dependency between Inject Field Inject Constructor and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
+  <testcase name="indirect cyclic dependency between Inject Field Inject Constructor and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="indirect cyclic dependency between Inject Field Inject Constructor and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="indirect cyclic dependency between Inject Field Inject Constructor and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
+  <testcase name="indirect cyclic dependency between Inject Field Inject Constructor and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="indirect cyclic dependency between Inject Field Inject Field and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Field Inject Field and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Field Inject Field and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
@@ -22,17 +22,17 @@
   <testcase name="indirect cyclic dependency between Inject Method Inject Constructor and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Method Inject Constructor and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Method Inject Constructor and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="indirect cyclic dependency between Inject Method Inject Field and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
+  <testcase name="indirect cyclic dependency between Inject Method Inject Field and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="indirect cyclic dependency between Inject Method Inject Field and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Method Inject Field and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Method Inject Method and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="indirect cyclic dependency between Inject Method Inject Method and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="indirect cyclic dependency between Inject Method Inject Method and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="[1] Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
+  <testcase name="indirect cyclic dependency between Inject Method Inject Method and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
+  <testcase name="[1] Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="[2] Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="[3] Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
+  <testcase name="[3] Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="[4] Provider in Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="[5] Provider in Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
+  <testcase name="[5] Provider in Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="[6] Provider in Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="[7] Scope  in Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="[8] Scope Provider in Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
@@ -42,7 +42,7 @@
   <testcase name="cyclic dependency between Inject Field and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="cyclic dependency between Inject Field and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="cyclic dependency between Inject Field and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
-  <testcase name="cyclic dependency between Inject Method and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.0"/>
+  <testcase name="cyclic dependency between Inject Method and Inject Constructor" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.002"/>
   <testcase name="cyclic dependency between Inject Method and Inject Field" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="cyclic dependency between Inject Method and Inject Method" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>
   <testcase name="should_not_throw_exception_if_cyclic_dependency_via_provider()" classname="org.tdd.item.ContextTest$DependencyChecked" time="0.001"/>

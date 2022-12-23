@@ -1,1 +1,2 @@
 rootProject.name = "tdd_item_4"
+includeFlat("tdd_item_3")

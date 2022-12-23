@@ -4,8 +4,18 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/tdd_item_3" />
+            <option value="$PROJECT_DIR$/tdd_item_4" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_3" />
-        <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../tdd_item_3" />
@@ -15,9 +25,9 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/../tdd_item_3" />
             <option value="$PROJECT_DIR$/../tdd_item_4" />
           </set>
         </option>

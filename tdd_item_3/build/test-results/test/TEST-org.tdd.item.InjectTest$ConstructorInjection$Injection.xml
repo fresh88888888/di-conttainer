@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.InjectTest$ConstructorInjection$Injection" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:26" hostname="umbrella" time="0.007">
+<testsuite name="org.tdd.item.InjectTest$ConstructorInjection$Injection" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.009">
   <properties/>
-  <testcase name="should_include_provider_type_from_inject_constructor()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.001"/>
+  <testcase name="should_include_provider_type_from_inject_constructor()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.002"/>
   <testcase name="should_call_default_constructor_if_no_inject_constructor()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.001"/>
   <testcase name="should_include_constructor_dependency_in_dependencies()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.001"/>
   <testcase name="should_inject_dependency_via_inject_constructor()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.001"/>
-  <testcase name="should_inject_provider_via_inject_constructor()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.001"/>
+  <testcase name="should_inject_provider_via_inject_constructor()" classname="org.tdd.item.InjectTest$ConstructorInjection$Injection" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:25" hostname="umbrella" time="0.005">
+<testsuite name="org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:57" hostname="umbrella" time="0.006">
   <properties/>
   <testcase name="should_retrieve_scope_annotation_from_component()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier" time="0.001"/>
   <testcase name="should_bind_component_as_singleton_scoped()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope$WithQualifier" time="0.001"/>

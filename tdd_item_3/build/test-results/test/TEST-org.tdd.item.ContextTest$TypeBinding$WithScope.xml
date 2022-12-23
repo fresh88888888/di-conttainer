@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.ContextTest$TypeBinding$WithScope" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:25" hostname="umbrella" time="0.025">
+<testsuite name="org.tdd.item.ContextTest$TypeBinding$WithScope" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:57" hostname="umbrella" time="0.019">
   <properties/>
   <testcase name="should_bind_component_as_customized_scope()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.002"/>
-  <testcase name="should_throw_exception_if_multi_scoped_provided()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.003"/>
+  <testcase name="should_throw_exception_if_multi_scoped_provided()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.002"/>
   <testcase name="should_retrieve_scope_annotation_from_component()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.001"/>
-  <testcase name="should_throw_exception_if_scoped_undefined()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.002"/>
-  <testcase name="should_throw_exception_if_multi_scoped_annotated()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.005"/>
-  <testcase name="should_bind_component_as_singleton_scoped()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.004"/>
+  <testcase name="should_throw_exception_if_scoped_undefined()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.001"/>
+  <testcase name="should_throw_exception_if_multi_scoped_annotated()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.002"/>
+  <testcase name="should_bind_component_as_singleton_scoped()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.003"/>
   <testcase name="should_not_be_singleton_scope_by_default()" classname="org.tdd.item.ContextTest$TypeBinding$WithScope" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

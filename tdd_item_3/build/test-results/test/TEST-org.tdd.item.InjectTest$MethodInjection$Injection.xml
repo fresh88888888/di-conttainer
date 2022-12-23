@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.InjectTest$MethodInjection$Injection" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-13T09:20:26" hostname="umbrella" time="0.012">
+<testsuite name="org.tdd.item.InjectTest$MethodInjection$Injection" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.014">
   <properties/>
   <testcase name="should_inject_method_via_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
-  <testcase name="should_not_call_inject_method_if_override_with_no_inject()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.0"/>
+  <testcase name="should_not_call_inject_method_if_override_with_no_inject()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_inject_provider_via_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_inject_dependencies_via_inject_method_from_superclass()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_include_provider_type_from_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_call_inject_method_even_if_no_dependency_declared()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_include_dependencies_from_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
-  <testcase name="should_only_call_once_if_subclass_override_inject_method_with_inject()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.0"/>
+  <testcase name="should_only_call_once_if_subclass_override_inject_method_with_inject()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
