@@ -9,7 +9,7 @@
 - 如果抛出 WebApplicationException，且 response 不为 null，则使用 response 响应 Http
 - 如果抛出 WebApplicationException，而 response 为 null，则通过异常的具体类型查找 ExceptionMapper，生产 response 响应 Http 请求
 - 如果抛出的不是 WebApplicationException，则通过异常的具体类型查找 ExceptionMapper，生产 response 响应 Http 请求
-RuntimeDelegate
+#### RuntimeDelegate
 - 为 MediaType 提供 HeaderDelegate 
 - 为 CacheControl 提供 HeaderDelegate 
 - 为 Cookie 提供 HeaderDelegates 
