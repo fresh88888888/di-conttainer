@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="throw other exception, use ExceptionMapper build response">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceServlet.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="throw exception mapper">
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceServletTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +211,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="40611000" />
+      <workItem from="1671101970944" duration="40706000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -264,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672039772124</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="throw exception mapper">
+      <created>1672045275758</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672045275758</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +289,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="restful api" />
     <MESSAGE value="throw other exception, use ExceptionMapper build response" />
-    <option name="LAST_COMMIT_MESSAGE" value="throw other exception, use ExceptionMapper build response" />
+    <MESSAGE value="throw exception mapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="throw exception mapper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

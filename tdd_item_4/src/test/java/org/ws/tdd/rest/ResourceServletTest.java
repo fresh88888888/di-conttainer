@@ -93,7 +93,6 @@ public class ResourceServletTest extends ServletTest{
         assertArrayEquals(new String[]{"SESSION_ID=session"}, httpResponse.headers().allValues(HttpHeaders.SET_COOKIE).toArray(String[]::new));
         assertEquals("error", httpResponse.body());
     }
-    //TODO: entity is null, ignore MessageBodyWriter
     @Test
     public void should_not_call_message_body_writer_if_entity_is_null() throws Exception {
         response.entity(null, new Annotation[0]).returnFrom(router);
