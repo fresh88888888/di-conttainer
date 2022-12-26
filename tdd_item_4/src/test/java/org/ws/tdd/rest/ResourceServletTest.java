@@ -4,7 +4,6 @@ import jakarta.servlet.Servlet;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.*;
-import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.MessageBodyWriter;
 import jakarta.ws.rs.ext.Providers;
 import jakarta.ws.rs.ext.RuntimeDelegate;
@@ -94,6 +93,45 @@ public class ResourceServletTest extends ServletTest{
         assertArrayEquals(new String[]{"SESSION_ID=session"}, httpResponse.headers().allValues(HttpHeaders.SET_COOKIE).toArray(String[]::new));
         assertEquals("error", httpResponse.body());
     }
+    //TODO: entity is null, ignore MessageBodyWriter
+    @Test
+    public void should_not_call_message_body_writer_if_entity_is_null() throws Exception {
+        response.entity(null, new Annotation[0]).returnFrom(router);
+        HttpResponse<String> httpResponse = get("/test");
+
+        assertEquals("", httpResponse.body());
+        assertEquals(Response.Status.OK.getStatusCode(), httpResponse.statusCode());
+    }
+    //TODO: 500 if MessageBodyWriter not found
+    //TODO: 500 if ExceptionMapper
+    //TODO: 500 if header delegate
+    @Test
+    public void should_use_response_from_web_application_exception_throw_by_exception_mapper() throws Exception {
+        when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
+        when(providers.getExceptionMapper(eq(RuntimeException.class))).thenReturn(exception -> {
+            throw new WebApplicationException(response.status(Response.Status.FORBIDDEN).build());
+        });
+        HttpResponse<String> httpResponse = get("/test");
+
+        assertEquals(Response.Status.FORBIDDEN.getStatusCode(), httpResponse.statusCode());
+    }
+    @Test
+    public void should_map_exception_throw_by_exception_mapper() throws Exception {
+        when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
+        when(providers.getExceptionMapper(eq(RuntimeException.class))).thenReturn(exception -> {
+            throw new IllegalArgumentException();
+        });
+        when(providers.getExceptionMapper(eq(IllegalArgumentException.class)))
+                .thenReturn(exception -> response.status(Response.Status.FORBIDDEN).build());
+        HttpResponse<String> httpResponse = get("/test");
+        assertEquals(Response.Status.FORBIDDEN.getStatusCode(), httpResponse.statusCode());
+    }
+    //TODO: providers gets exception mapper
+    //TODO: runtime delegate
+    //TODO: header delegate
+    //TODO: providers gets MessageBodyWriter
+    //TODO: MessageBodyWriter write
+
     @Test
     public void should_build_response_by_exception_mapper_if_null_response_from_web_application_exception() throws Exception {
         when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
@@ -102,9 +140,6 @@ public class ResourceServletTest extends ServletTest{
 
         assertEquals(Response.Status.FORBIDDEN.getStatusCode(), httpResponse.statusCode());
     }
-
-    //TODO: 500 if MessageBodyWriter not found
-    //TODO: entity is null, ignore MessageBodyWriter
     class OutboundResponseBuilder{
         private Response.Status status = Response.Status.OK;
         private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
