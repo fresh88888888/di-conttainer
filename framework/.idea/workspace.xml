@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="restful api">
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceServletTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/../tdd_item_4">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -98,6 +103,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="ResourceServletTest.should_build_response_by_exception_mapper_if_null_response_from_web_application_exception" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.ResourceServletTest.should_build_response_by_exception_mapper_if_null_response_from_web_application_exception&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="ResourceServletTest.should_use_http_headers_from_response" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -121,7 +149,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ResourceServletTest.should_use_status_from_response" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ResourceServletTest.should_use_response_from_web_application_exception" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
@@ -134,7 +162,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.ResourceServletTest.should_use_status_from_response&quot;" />
+            <option value="&quot;org.ws.tdd.rest.ResourceServletTest.should_use_response_from_web_application_exception&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,7 +172,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SpikeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ResourceServletTest.should_write_entity_to_http_response_using_message_body_writer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
@@ -157,7 +185,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.SpikeTest&quot;" />
+            <option value="&quot;org.ws.tdd.rest.ResourceServletTest.should_write_entity_to_http_response_using_message_body_writer&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,9 +198,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ResourceServletTest" />
-        <item itemvalue="Gradle.ResourceServletTest.should_use_status_from_response" />
+        <item itemvalue="Gradle.ResourceServletTest.should_build_response_by_exception_mapper_if_null_response_from_web_application_exception" />
+        <item itemvalue="Gradle.ResourceServletTest.should_use_response_from_web_application_exception" />
+        <item itemvalue="Gradle.ResourceServletTest.should_write_entity_to_http_response_using_message_body_writer" />
         <item itemvalue="Gradle.ResourceServletTest.should_use_http_headers_from_response" />
-        <item itemvalue="Gradle.SpikeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +213,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="20991000" />
+      <workItem from="1671101970944" duration="35064000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -221,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671790426108</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="restful api">
+      <created>1671790533118</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671790533118</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
