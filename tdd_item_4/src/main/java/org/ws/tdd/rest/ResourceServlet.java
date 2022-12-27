@@ -28,29 +28,34 @@ public class ResourceServlet extends HttpServlet {
         ResourceRouter router = runtime.getResourceRouter();
         respond(resp, () -> router.dispatch(req, runtime.createResourceContext(req, resp)));
     }
-    private void respond(HttpServletResponse resp, Supplier<OutboundResponse> supplier){
+
+    private void respond(HttpServletResponse resp, Supplier<OutboundResponse> supplier) {
         try {
             respond(resp, supplier.get());
         } catch (WebApplicationException ex) {
             respond(resp, () -> (OutboundResponse) ex.getResponse());
-        }catch (Throwable throwable){
+        } catch (Throwable throwable) {
             respond(resp, () -> (OutboundResponse) ((ExceptionMapper) providers.getExceptionMapper(throwable.getClass())).toResponse(throwable));
         }
     }
+
     private void respond(HttpServletResponse resp, OutboundResponse outboundResponse) throws IOException {
         resp.setStatus(outboundResponse.getStatus());
-        MultivaluedMap<String, Object> headers = outboundResponse.getHeaders();
+        headers(resp, outboundResponse.getHeaders());
+        body(resp, outboundResponse, outboundResponse.getGenericEntity());
+    }
+    private void headers(HttpServletResponse resp, MultivaluedMap<String, Object> headers) {
         for (String name : headers.keySet()) {
             for (Object value : headers.get(name)) {
                 RuntimeDelegate.HeaderDelegate delegate = RuntimeDelegate.getInstance().createHeaderDelegate(value.getClass());
                 resp.addHeader(name, delegate.toString(value));
             }
         }
-        GenericEntity entity = outboundResponse.getGenericEntity();
-        if (entity != null) {
-            MessageBodyWriter writer = providers.getMessageBodyWriter(entity.getRawType(), entity.getType(), outboundResponse.getAnnotations(), outboundResponse.getMediaType());
-            writer.writeTo(entity.getEntity(), entity.getRawType(), entity.getType(), outboundResponse.getAnnotations(), outboundResponse.getMediaType(),
-                    outboundResponse.getHeaders(), resp.getOutputStream());
-        }
+    }
+    private void body(HttpServletResponse resp, OutboundResponse outboundResponse, GenericEntity entity) throws IOException {
+        if (entity == null) return;
+        MessageBodyWriter writer = providers.getMessageBodyWriter(entity.getRawType(), entity.getType(), outboundResponse.getAnnotations(), outboundResponse.getMediaType());
+        writer.writeTo(entity.getEntity(), entity.getRawType(), entity.getType(), outboundResponse.getAnnotations(), outboundResponse.getMediaType(),
+                outboundResponse.getHeaders(), resp.getOutputStream());
     }
 }

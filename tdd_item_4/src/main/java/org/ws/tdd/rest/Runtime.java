@@ -12,4 +12,6 @@ public interface Runtime {
     ResourceContext createResourceContext(HttpServletRequest req, HttpServletResponse resp);
     Context getApplicationContext();
     ResourceRouter getResourceRouter();
+
+    //UriInfoBuilder createUriBuilder(HttpServletRequest req);
 }
