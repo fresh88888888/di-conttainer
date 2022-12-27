@@ -94,7 +94,71 @@ public class ResourceServletTest extends ServletTest {
                         () -> exceptionThrownFrom.getValue().accept(caller.getValue())));
         return tests;
     }
+    @ExceptionThrownFrom
+    private void providers_getExceptionMapper(RuntimeException exception) {
+        when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
+        when(providers.getExceptionMapper(eq(RuntimeException.class))).thenThrow(exception);
+    }
 
+    @ExceptionThrownFrom
+    private void exceptionMapper_toResponse(RuntimeException exception) {
+        when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
+        when(providers.getExceptionMapper(eq(RuntimeException.class))).thenThrow(exception);
+    }
+
+    @ExceptionThrownFrom
+    private void headerDelegate_toString(RuntimeException exception) {
+        response().headers(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_TYPE).returnFrom(router);
+        when(delegate.createHeaderDelegate(MediaType.class)).thenReturn(new RuntimeDelegate.HeaderDelegate<>() {
+            @Override
+            public MediaType fromString(String value) {
+                return null;
+            }
+            @Override
+            public String toString(MediaType mediaType) {
+                throw exception;
+            }
+        });
+    }
+
+    @ExceptionThrownFrom
+    private void providers_getMessageBodyWriter(RuntimeException exception) {
+        response().entity(new GenericEntity<>(2.5, Double.class), new Annotation[0]).returnFrom(router);
+        when(providers.getMessageBodyWriter(eq(Double.class), eq(Double.class), eq(new Annotation[0]), eq(MediaType.TEXT_PLAIN_TYPE))).thenThrow(exception);
+    }
+
+    @ExceptionThrownFrom
+    private void messageBodyWriter_writeTo(RuntimeException exception) {
+        response().entity(new GenericEntity<>(2.5, Double.class), new Annotation[0]).returnFrom(router);
+        when(providers.getMessageBodyWriter(eq(Double.class), eq(Double.class), eq(new Annotation[0]), eq(MediaType.TEXT_PLAIN_TYPE)))
+                .thenReturn(new MessageBodyWriter<>() {
+                    @Override
+                    public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+                        return false;
+                    }
+
+                    @Override
+                    public void writeTo(Double aDouble, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException, WebApplicationException {
+                        throw exception;
+                    }
+                });
+    }
+
+    @ExceptionThrownFrom
+    public void resourceRouter_dispatch(RuntimeException exception) {
+        when(router.dispatch(any(), eq(context))).thenThrow(exception);
+    }
+    @ExceptionThrownFrom
+    private void runtimeDelegate_createHeaderDelegate(RuntimeException exception) {
+        response().headers(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_TYPE).returnFrom(router);
+        when(delegate.createHeaderDelegate(eq(MediaType.class))).thenThrow(exception);
+    }
+    @Retention(RetentionPolicy.RUNTIME)
+    @interface ExceptionThrownFrom {
+    }
+    private OutboundResponseBuilder response() {
+        return new OutboundResponseBuilder();
+    }
     private void internalServerErrorThrownFrom() {
         when(providers.getExceptionMapper(eq(NullPointerException.class))).thenReturn(e -> response().status(Response.Status.INTERNAL_SERVER_ERROR).build());
         HttpResponse<String> httpResponse = get("/test");
@@ -131,71 +195,6 @@ public class ResourceServletTest extends ServletTest {
         HttpResponse<String> httpResponse = get("/test");
         assertEquals(Response.Status.FORBIDDEN.getStatusCode(), httpResponse.statusCode());
     }
-
-    @ExceptionThrownFrom
-    private void providers_getExceptionMapper(RuntimeException exception) {
-        when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
-        when(providers.getExceptionMapper(eq(RuntimeException.class))).thenThrow(exception);
-    }
-
-    @ExceptionThrownFrom
-    private void exceptionMapper_toResponse(RuntimeException exception) {
-        when(router.dispatch(any(), eq(context))).thenThrow(RuntimeException.class);
-        when(providers.getExceptionMapper(eq(RuntimeException.class))).thenThrow(exception);
-    }
-
-    @ExceptionThrownFrom
-    private void headerDelegate_toString(RuntimeException exception) {
-        response().headers(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_TYPE).returnFrom(router);
-        when(delegate.createHeaderDelegate(MediaType.class)).thenReturn(new RuntimeDelegate.HeaderDelegate<>() {
-            @Override
-            public MediaType fromString(String value) {
-                return null;
-            }
-
-            @Override
-            public String toString(MediaType mediaType) {
-                throw exception;
-            }
-        });
-    }
-
-    @ExceptionThrownFrom
-    private void providers_getMessageBodyWriter(RuntimeException exception) {
-        response().entity(new GenericEntity<>(2.5, Double.class), new Annotation[0]).returnFrom(router);
-        when(providers.getMessageBodyWriter(eq(Double.class), eq(Double.class), eq(new Annotation[0]), eq(MediaType.TEXT_PLAIN_TYPE))).thenThrow(exception);
-    }
-
-    @ExceptionThrownFrom
-    private void messageBodyWriter_writeTo(RuntimeException exception) {
-        response().entity(new GenericEntity<>(2.5, Double.class), new Annotation[0]).returnFrom(router);
-        when(providers.getMessageBodyWriter(eq(Double.class), eq(Double.class), eq(new Annotation[0]), eq(MediaType.TEXT_PLAIN_TYPE)))
-                .thenReturn(new MessageBodyWriter<>() {
-                    @Override
-                    public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
-                        return false;
-                    }
-
-                    @Override
-                    public void writeTo(Double aDouble, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException, WebApplicationException {
-                        throw exception;
-                    }
-                });
-    }
-
-    @ExceptionThrownFrom
-    public void resourceRouter_dispatch(RuntimeException exception) {
-        when(router.dispatch(any(), eq(context))).thenThrow(exception);
-    }
-
-    private OutboundResponseBuilder response() {
-        return new OutboundResponseBuilder();
-    }
-
-    @Retention(RetentionPolicy.RUNTIME)
-    @interface ExceptionThrownFrom {
-    }
-
     @Nested
     class RespondForOutboundResponse {
         @Test
