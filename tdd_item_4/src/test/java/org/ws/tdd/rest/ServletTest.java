@@ -40,10 +40,13 @@ public abstract class ServletTest {
         return new URL(new URL("http://localhost:8080/"), path).toURI();
     }
 
-    protected HttpResponse<String> get(String path) throws Exception {
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder(path(path)).GET().build();
-        return client.send(request, HttpResponse.BodyHandlers.ofString());
+    protected HttpResponse<String> get(String path) {
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder(path(path)).GET().build();
+            return client.send(request, HttpResponse.BodyHandlers.ofString());
+        }catch (Exception ex){
+            throw new RuntimeException(ex);
+        }
     }
-
 }
