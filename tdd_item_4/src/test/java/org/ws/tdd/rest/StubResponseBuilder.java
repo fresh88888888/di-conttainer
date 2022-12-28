@@ -14,7 +14,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class StubResponseBuilder extends Response.ResponseBuilder {
-    private GenericEntity<Object> entity = new GenericEntity<>("matched", String.class);
+    private GenericEntity<Object> entity;
     private Response.Status status = Response.Status.OK;
     private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
     private Providers providers = mock(Providers.class);
