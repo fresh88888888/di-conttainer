@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="分解任务">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="修改一个bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +78,7 @@
       <recent name="org.ws.tdd.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ResourceDispatcherTest.should_use_matched_root_resource">
+  <component name="RunManager" selected="Gradle.ResourceDispatcherTest">
     <configuration name="ResourceDispatcherTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,10 +196,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ResourceDispatcherTest" />
         <item itemvalue="Gradle.ResourceDispatcherTest.should_use_matched_root_resource" />
         <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
         <item itemvalue="Gradle.ResourceDispatcherTest.should" />
-        <item itemvalue="Gradle.ResourceDispatcherTest" />
         <item itemvalue="Gradle.ResourceServletTest" />
       </list>
     </recent_temporary>
@@ -213,7 +212,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="81788000" />
+      <workItem from="1671101970944" duration="84532000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -320,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672212357869</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="修改一个bug">
+      <created>1672213216778</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672213216778</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +352,8 @@
     <MESSAGE value="代码重构" />
     <MESSAGE value="设计架构愿景" />
     <MESSAGE value="分解任务" />
-    <option name="LAST_COMMIT_MESSAGE" value="分解任务" />
+    <MESSAGE value="修改一个bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改一个bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
