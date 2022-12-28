@@ -37,11 +37,10 @@ class DefaultResourceRouter implements ResourceRouter {
     public OutboundResponse dispatch(HttpServletRequest req, ResourceContext resourceContext) {
         String path = req.getServletPath();
         UriInfoBuilder builder = runtime.createUriInfoBuilder(req);
-        Optional<RootResource> matched = rootResources.stream().map(resource -> new Result(resource.getUriTemplate().match(path), resource))
-                .filter(result -> result.matched.isPresent()).map(Result::resource)
-                .findFirst();
-        Optional<ResourceMethod> method = matched.flatMap(resource -> resource.match(path, req.getMethod(), Collections.list(req.getHeaders(HttpHeaders.ACCEPT))
-                .toArray(String[]::new), builder));
+        Optional<Result> matched = rootResources.stream().map(resource -> new Result(resource.getUriTemplate().match(path), resource))
+                .filter(result -> result.matched.isPresent()).findFirst();
+        Optional<ResourceMethod> method = matched.flatMap(result -> result.resource.match(result.matched.get().getRemaining(), req.getMethod(),
+                Collections.list(req.getHeaders(HttpHeaders.ACCEPT)).toArray(String[]::new), builder));
         GenericEntity<?> entity = method.map(m -> m.call(resourceContext, builder)).get();
 
         return (OutboundResponse) Response.ok(entity).build();
