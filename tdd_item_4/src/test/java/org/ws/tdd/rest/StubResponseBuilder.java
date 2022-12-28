@@ -1,6 +1,7 @@
 package org.ws.tdd.rest;
 
 import jakarta.ws.rs.core.*;
+import jakarta.ws.rs.ext.Providers;
 
 import java.lang.annotation.Annotation;
 import java.net.URI;
@@ -13,14 +14,21 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class StubResponseBuilder extends Response.ResponseBuilder {
-    private Object entity;
-    private int status;
+    private GenericEntity<Object> entity = new GenericEntity<>("matched", String.class);
+    private Response.Status status = Response.Status.OK;
     private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
+    private Providers providers = mock(Providers.class);
+    private Annotation[] annotations = new Annotation[0];
+    private MediaType mediaType = MediaType.TEXT_PLAIN_TYPE;
 
     @Override
     public Response build() {
         OutboundResponse response = mock(OutboundResponse.class);
-        when(response.getEntity()).thenReturn(entity);
+        when(response.getGenericEntity()).thenReturn(entity);
+        when(response.getStatus()).thenReturn(status.getStatusCode());
+        when(response.getStatusInfo()).thenReturn(status);
+        when(response.getAnnotations()).thenReturn(annotations);
+        when(response.getMediaType()).thenReturn(mediaType);
         return response;
     }
 
@@ -36,13 +44,13 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
 
     @Override
     public Response.ResponseBuilder status(int status, String reasonPhrase) {
-        this.status = status;
+        this.status = Response.Status.fromStatusCode(status);
         return this;
     }
 
     @Override
     public Response.ResponseBuilder entity(Object entity) {
-        this.entity = entity;
+        this.entity = (GenericEntity<Object>) entity;
         return this;
     }
 

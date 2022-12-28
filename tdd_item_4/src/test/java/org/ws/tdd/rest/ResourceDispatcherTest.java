@@ -61,7 +61,7 @@ public class ResourceDispatcherTest {
         when(unmatched.getUriTemplate()).thenReturn(unmatchedUriTemplate);
         when(unmatchedUriTemplate.match(eq("/users"))).thenReturn(Optional.empty());
 
-        ResourceRouter.DefaultResourceRouter router = new ResourceRouter.DefaultResourceRouter(runtime, List.of(matched, unmatched));
+        DefaultResourceRouter router = new DefaultResourceRouter(runtime, List.of(matched, unmatched));
         OutboundResponse response = router.dispatch(request, context);
         assertSame(response.getGenericEntity(), entity);
         assertEquals(200, response.getStatus());
