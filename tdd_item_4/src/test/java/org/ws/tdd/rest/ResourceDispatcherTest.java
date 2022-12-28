@@ -42,10 +42,6 @@ public class ResourceDispatcherTest {
         builder = mock(UriInfoBuilder.class);
         when(runtime.createUriInfoBuilder(same(request))).thenReturn(builder);
     }
-
-    //TODO: 根据与Path匹配结果，降序排序RootResource，选择第一个RootResource
-    //TODO: R1、R2, R1 matched, R2 none R1
-    //TODO: R1、R2, R1、R2 matched, R1 result < R2 result R1
     @Test
     public void should_use_matched_root_resource() {
         GenericEntity entity = new GenericEntity("matched", String.class);
@@ -64,8 +60,8 @@ public class ResourceDispatcherTest {
         GenericEntity entity2 = new GenericEntity("2", String.class);
 
         DefaultResourceRouter router = new DefaultResourceRouter(runtime, List.of(
-                rootResource(matched("/users/1", result("/1", 1)), returns(entity1)),
-                rootResource(matched("/users/1", result("/1", 2)), returns(entity2))
+                rootResource(matched("/users/1", result("/1", 2)), returns(entity2)),
+                rootResource(matched("/users/1", result("/1", 1)), returns(entity1))
                 ));
         OutboundResponse response = router.dispatch(request, context);
         assertSame(response.getGenericEntity(), entity1);
