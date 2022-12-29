@@ -17,10 +17,15 @@ interface UriTemplate {
 }
 
  class UriTemplateString implements UriTemplate{
+     private static Pattern variable = Pattern.compile("\\{\\w[\\w\\.-]*\\}");
      private  Pattern pattern;
 
      public UriTemplateString(String template) {
-         this.pattern = Pattern.compile("(" + template + ")" + "(/.*)?");
+         this.pattern = Pattern.compile("(" + variable(template) + ")" + "(/.*)?");
+     }
+
+     private String variable(String template) {
+         return variable.matcher(template).replaceAll("([^/]+?)");
      }
 
      @Override
