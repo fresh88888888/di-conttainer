@@ -1,7 +1,6 @@
 package org.ws.tdd.rest;
 
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,15 +16,29 @@ interface UriTemplate {
 }
 
  class UriTemplateString implements UriTemplate{
-     private static Pattern variable = Pattern.compile("\\{\\w[\\w\\.-]*\\}");
+     private static final String LeftBracket = "\\{";
+     private static final String RightBracket = "}";
+     private static final String VariableName = "\\w[\\w\\.-]*";
+     private static final String NonBracket = "[^\\{}]+";
+     public static final String DefaultVariablePattern = "([^/]+?)";
+     private static final Pattern variable = Pattern.compile(LeftBracket + group(VariableName) + group(":" + group(NonBracket)) + "?" + RightBracket);
+     private static final int VariableNameGroup = 1;
+     private static final int VariablePatternGroup = 3;
      private  Pattern pattern;
-
+     private List<String> variables = new ArrayList<>();
+     private int VariableGroupStartFrom;
      public UriTemplateString(String template) {
-         this.pattern = Pattern.compile("(" + variable(template) + ")" + "(/.*)?");
+         this.pattern = Pattern.compile(group(variable(template)) + "(/.*)?");
+         VariableGroupStartFrom = 2;
      }
-
+     private static String group(String pattern){
+        return  "(" + pattern + ")";
+     }
      private String variable(String template) {
-         return variable.matcher(template).replaceAll("([^/]+?)");
+         return variable.matcher(template).replaceAll(result -> {
+             variables.add(result.group(VariableNameGroup));
+             return result.group(VariablePatternGroup) == null ? DefaultVariablePattern : group(result.group(VariablePatternGroup));
+         });
      }
 
      @Override
@@ -35,6 +48,10 @@ interface UriTemplate {
              return Optional.empty();
          }
          int count = matcher.groupCount();
+         Map<String, String> parameters = new HashMap<>();
+         for (int i = 0; i < variables.size(); i++){
+             parameters.put(variables.get(i), matcher.group(VariableGroupStartFrom + i));
+         }
          return Optional.of(new MatchResult() {
              @Override
              public String getMatched() {
@@ -46,7 +63,7 @@ interface UriTemplate {
              }
              @Override
              public Map<String, String> getMatchedPathParameters() {
-                 return null;
+                 return parameters;
              }
              @Override
              public int compareTo(MatchResult o) {

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO if path match uri template , return matched result">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: path match with variable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/UriTemplateStringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/UriTemplateStringTest.java" afterDir="false" />
@@ -80,52 +80,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.UriTemplateStringTest">
-    <configuration name="ResourceDispatcherTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.ResourceDispatcherTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests in 'org.ws.tdd.rest'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.*&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="UriTemplateStringTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -140,6 +94,52 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.ws.tdd.rest.UriTemplateStringTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UriTemplateStringTest.should_extract_variable_value_by_given_pattern" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.UriTemplateStringTest.should_extract_variable_value_by_given_pattern&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UriTemplateStringTest.should_return_empty_if_not_match_given_pattern" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.UriTemplateStringTest.should_return_empty_if_not_match_given_pattern&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -198,10 +198,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.UriTemplateStringTest" />
+        <item itemvalue="Gradle.UriTemplateStringTest.should_extract_variable_value_by_given_pattern" />
+        <item itemvalue="Gradle.UriTemplateStringTest.should_return_empty_if_not_match_given_pattern" />
         <item itemvalue="Gradle.UriTemplateStringTest.should_return_match_result_if_path_matched" />
         <item itemvalue="Gradle.UriTemplateStringTest.should_return_empty_if_path_not_matched" />
-        <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
-        <item itemvalue="Gradle.ResourceDispatcherTest" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +213,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="94402000" />
+      <workItem from="1671101970944" duration="98031000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -362,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672277824099</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="TODO: path match with variable">
+      <created>1672279300721</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1672279300721</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +400,8 @@
     <MESSAGE value="如果没有匹配的 RootResource，则构造 404 的 Response &#10;如果返回的 RootResource 中无法匹配剩余 Path，则构造 404 的 Response &#10;如果 ResourceMethod 返回 null，则构造 204 的 Response" />
     <MESSAGE value="TODO: if path not match uri template ,return empty" />
     <MESSAGE value="TODO if path match uri template , return matched result" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO if path match uri template , return matched result" />
+    <MESSAGE value="TODO: path match with variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: path match with variable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
