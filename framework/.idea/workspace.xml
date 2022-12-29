@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: path match with variable">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/UriTemplateStringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/UriTemplateStringTest.java" afterDir="false" />
@@ -213,7 +213,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="98031000" />
+      <workItem from="1671101970944" duration="99363000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -369,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672279300721</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable">
+      <created>1672283075997</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1672283075997</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +408,8 @@
     <MESSAGE value="TODO: if path not match uri template ,return empty" />
     <MESSAGE value="TODO if path match uri template , return matched result" />
     <MESSAGE value="TODO: path match with variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: path match with variable" />
+    <MESSAGE value="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

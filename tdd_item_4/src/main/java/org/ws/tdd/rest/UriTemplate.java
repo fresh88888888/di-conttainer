@@ -36,8 +36,13 @@ interface UriTemplate {
      }
      private String variable(String template) {
          return variable.matcher(template).replaceAll(result -> {
-             variables.add(result.group(VariableNameGroup));
-             return result.group(VariablePatternGroup) == null ? DefaultVariablePattern : group(result.group(VariablePatternGroup));
+             String pattern = result.group(VariablePatternGroup);
+             String variableName = result.group(VariableNameGroup);
+             if(variables.contains(variableName)){
+                 throw new IllegalArgumentException("duplicate variable " + variableName);
+             }
+             variables.add(variableName);
+             return pattern == null ? DefaultVariablePattern : group(pattern);
          });
      }
 
