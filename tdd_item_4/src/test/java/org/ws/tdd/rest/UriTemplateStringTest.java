@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UriTemplateStringTest {
 
-    //TODO: if path not match uri template ,return empty
     @Test
     public void should_return_empty_if_path_not_matched() {
         UriTemplateString template = new UriTemplateString("/users");
@@ -16,7 +16,14 @@ public class UriTemplateStringTest {
 
         assertTrue(match.isEmpty());
     }
-    //TODO: if path match uri template , return matched result
+    @Test
+    public void should_return_match_result_if_path_matched(){
+        UriTemplateString template = new UriTemplateString("/users");
+        Optional<UriTemplate.MatchResult> match = template.match("/users/1");
+
+        assertEquals("/users", match.get().getMatched());
+        assertEquals("/1", match.get().getRemaining());
+    }
     //TODO: path match with variable
     //TODO: path match with variable with specific pattern
     //TODO: throw exception if variable undefined
