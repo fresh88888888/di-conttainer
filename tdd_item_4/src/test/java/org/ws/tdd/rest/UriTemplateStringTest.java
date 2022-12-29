@@ -49,6 +49,15 @@ public class UriTemplateStringTest {
     public void should_throw_illegal_argument_exception_if_variable_redefined(){
         assertThrows(IllegalArgumentException.class, () -> new UriTemplateString("/users/{id:[0-9]+}/{id}"));
     }
-    //TODO: throw exception if variable redefined
     //TODO: comparing result, with match literal, variable and specific variable
+    @Test
+    public void should_compare_for_match_literal(){
+        String path = "/users/1234";
+        UriTemplate smaller = new UriTemplateString("/users/1234");
+        UriTemplate larger = new UriTemplateString("/users/{id}");
+        UriTemplate.MatchResult lhs = smaller.match(path).get();
+        UriTemplate.MatchResult rhs = larger.match(path).get();
+
+        assertTrue(lhs.compareTo(rhs) < 0);
+    }
 }
