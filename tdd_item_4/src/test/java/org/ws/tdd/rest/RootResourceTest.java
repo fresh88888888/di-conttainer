@@ -4,12 +4,9 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -23,6 +20,7 @@ public class RootResourceTest {
 
         assertTrue(template.match("/messages/hello").isPresent());
     }
+
     @ParameterizedTest
     @CsvSource({"GET, /messages/hello, Messages.hello", "GET, /messages/ah, Messages.ah"})
     public void should_resource_match_method(String httpMethod, String path, String resourceMethod) {
@@ -43,6 +41,7 @@ public class RootResourceTest {
         public String ah() {
             return "ah";
         }
+
         @GET
         @Path("/hello")
         @Produces(MediaType.TEXT_PLAIN)

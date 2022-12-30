@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: get uri template from path annotation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: find resource method, matches the http request and http method">
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/RootResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/RootResourceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +211,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="114027000" />
+      <workItem from="1671101970944" duration="114052000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -411,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672367557847</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="TODO: find resource method, matches the http request and http method">
+      <created>1672371055901</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1672371055901</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +452,8 @@
     <MESSAGE value="TODO: comparing result, with match literal, variable and specific variable" />
     <MESSAGE value="重构" />
     <MESSAGE value="TODO: get uri template from path annotation" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: get uri template from path annotation" />
+    <MESSAGE value="TODO: find resource method, matches the http request and http method" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: find resource method, matches the http request and http method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
