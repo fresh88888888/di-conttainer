@@ -1,6 +1,7 @@
 package org.ws.tdd.rest;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.Path;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.HttpHeaders;
@@ -64,5 +65,23 @@ class DefaultResourceRouter implements ResourceRouter {
             return matched.flatMap(result -> resource.match(result.getRemaining(), req.getMethod(),
                     Collections.list(req.getHeaders(HttpHeaders.ACCEPT)).toArray(String[]::new), builder));
         }
+    }
+}
+
+class RootResourceClass implements ResourceRouter.RootResource{
+    private PathTemplate uriTemplate;
+    private Class<?> resourceClass;
+
+    public RootResourceClass(Class<?> resourceClass) {
+        this.resourceClass = resourceClass;
+        this.uriTemplate  = new PathTemplate(resourceClass.getAnnotation(Path.class).value());
+    }
+    @Override
+    public Optional<ResourceRouter.ResourceMethod> match(String path, String method, String[] mediaTypes, UriInfoBuilder builder) {
+        return Optional.empty();
+    }
+    @Override
+    public UriTemplate getUriTemplate() {
+        return uriTemplate;
     }
 }
