@@ -52,7 +52,6 @@ public class ResourceMethodsTest {
             return "messages";
         }
     }
-
     @Path("/messages")
     static class Messages {
         @GET
