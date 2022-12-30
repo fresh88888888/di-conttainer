@@ -116,7 +116,7 @@ public class ResourceDispatcherTest {
     private ResourceRouter.RootResource rootResource(UriTemplate uriTemplate, ResourceRouter.ResourceMethod method) {
         ResourceRouter.RootResource matched = mock(ResourceRouter.RootResource.class);
         when(matched.getUriTemplate()).thenReturn(uriTemplate);
-        when(matched.match(eq(result("/1")), eq("GET"), eq(new String[]{MediaType.WILDCARD}), eq(builder))).thenReturn(Optional.of(method));
+        when(matched.match(eq(new PathTemplate("/1").match("/1").get()), eq("GET"), eq(new String[]{MediaType.WILDCARD}), eq(builder))).thenReturn(Optional.of(method));
         return matched;
     }
 

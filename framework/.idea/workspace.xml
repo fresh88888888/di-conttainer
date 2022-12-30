@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: ResourceMethods test case">
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceMethodsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceMethodsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +74,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.ws.tdd.rest.ResourceMethods.Result" />
+      <recent name="Result" />
       <recent name="org.ws.tdd.rest.RootResourceClass.ResourceMethods" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
@@ -80,30 +85,7 @@
       <recent name="org.ws.tdd.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ResourceMethodsTest">
-    <configuration name="ResourceDispatcherTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.ResourceDispatcherTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Tests in 'org.ws.tdd.rest'">
     <configuration name="ResourceMethodsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -150,7 +132,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RootResourceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubResourceLocatorsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
@@ -163,7 +145,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.RootResourceTest&quot;" />
+            <option value="&quot;org.ws.tdd.rest.SubResourceLocatorsTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -173,7 +155,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RootResourceTest.should_return_empty_if_not_match" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubResourceLocatorsTest.should_match_path_with_uri" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
@@ -186,7 +168,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.RootResourceTest.should_return_empty_if_not_match&quot;" />
+            <option value="&quot;org.ws.tdd.rest.SubResourceLocatorsTest.should_match_path_with_uri&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'org.ws.tdd.rest'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.*&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -198,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
+        <item itemvalue="Gradle.SubResourceLocatorsTest" />
+        <item itemvalue="Gradle.SubResourceLocatorsTest.should_match_path_with_uri" />
         <item itemvalue="Gradle.ResourceMethodsTest" />
         <item itemvalue="Gradle.ResourceMethodsTest.should_resource_match_method_in_root_resource" />
-        <item itemvalue="Gradle.RootResourceTest" />
-        <item itemvalue="Gradle.RootResourceTest.should_return_empty_if_not_match" />
-        <item itemvalue="Gradle.ResourceDispatcherTest" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +219,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="129689000" />
+      <workItem from="1671101970944" duration="136712000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -447,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672393414185</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="TODO: ResourceMethods test case">
+      <created>1672393441868</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1672393441868</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
