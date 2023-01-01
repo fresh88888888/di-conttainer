@@ -17,7 +17,7 @@ interface ResourceRouter {
     OutboundResponse dispatch(HttpServletRequest req, ResourceContext resourceContext);
 
     interface Resource {
-        Optional<ResourceMethod> match(UriTemplate.MatchResult result, String method, String[] mediaTypes, UriInfoBuilder builder);
+        Optional<ResourceMethod> match(UriTemplate.MatchResult result, String method, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder);
     }
 
     interface RootResource extends Resource, UriHandler {
@@ -43,7 +43,7 @@ class DefaultResourceRouter implements ResourceRouter {
     public OutboundResponse dispatch(HttpServletRequest req, ResourceContext resourceContext) {
         String path = req.getServletPath();
         UriInfoBuilder builder = runtime.createUriInfoBuilder(req);
-        Optional<ResourceMethod> method = UriHandlers.mapMatched(path, rootResources, (result, resource) -> findResourceMethod(req, builder, result, resource));
+        Optional<ResourceMethod> method = UriHandlers.mapMatched(path, rootResources, (result, resource) -> findResourceMethod(req, resourceContext, builder, result, resource));
 
         if (method.isEmpty()){
             return (OutboundResponse) Response.status(Response.Status.NOT_FOUND).build();
@@ -51,8 +51,8 @@ class DefaultResourceRouter implements ResourceRouter {
 
         return (OutboundResponse) method.map(m -> m.call(resourceContext, builder)).map(entity -> Response.ok(entity).build()).orElseGet(() -> Response.noContent().build());
     }
-    private Optional<ResourceMethod> findResourceMethod(HttpServletRequest req, UriInfoBuilder builder, Optional<UriTemplate.MatchResult> matched, RootResource handler) {
-        return handler.match(matched.get(), req.getMethod(), Collections.list(req.getHeaders(HttpHeaders.ACCEPT)).toArray(String[]::new), builder);
+    private Optional<ResourceMethod> findResourceMethod(HttpServletRequest req, ResourceContext resourceContext, UriInfoBuilder builder, Optional<UriTemplate.MatchResult> matched, RootResource handler) {
+        return handler.match(matched.get(), req.getMethod(), Collections.list(req.getHeaders(HttpHeaders.ACCEPT)).toArray(String[]::new), resourceContext, builder);
     }
 }
 class ResourceMethods{
@@ -104,16 +104,19 @@ class RootResourceClass implements ResourceRouter.RootResource{
     private PathTemplate uriTemplate;
     private Class<?> resourceClass;
     private ResourceMethods resourceMethods;
+    private SubResourceLocators subResourceLocators;
     public RootResourceClass(Class<?> resourceClass) {
         this.resourceClass = resourceClass;
         this.uriTemplate  = new PathTemplate(resourceClass.getAnnotation(Path.class).value());
         this.resourceMethods = new ResourceMethods(resourceClass.getMethods());
+        this.subResourceLocators = new SubResourceLocators(resourceClass.getMethods());
     }
 
     @Override
-    public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String method, String[] mediaTypes, UriInfoBuilder builder) {
+    public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String method, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder) {
         String remaining = Optional.ofNullable(result.getRemaining()).orElse("");
-        return resourceMethods.findResourceMethods(remaining, method);
+        builder.addMatchedResource(context.getResource(resourceClass));
+        return resourceMethods.findResourceMethods(remaining, method).or(() -> subResourceLocators.findSubResourceMethods(remaining, method, mediaTypes, context, builder));
     }
 
     @Override
@@ -124,14 +127,16 @@ class RootResourceClass implements ResourceRouter.RootResource{
 class SubResource implements ResourceRouter.Resource{
     private Object subResource;
     private ResourceMethods resourceMethods;
+    private SubResourceLocators subResourceLocators;
     public SubResource(Object subResource) {
         this.subResource = subResource;
         this.resourceMethods = new ResourceMethods(subResource.getClass().getMethods());
+        this.subResourceLocators = new SubResourceLocators(subResource.getClass().getMethods());
     }
     @Override
-    public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String method, String[] mediaTypes, UriInfoBuilder builder) {
+    public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String method, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder) {
         String remaining = Optional.ofNullable(result.getRemaining()).orElse("");
-        return resourceMethods.findResourceMethods(remaining, method);
+        return resourceMethods.findResourceMethods(remaining, method).or(() -> subResourceLocators.findSubResourceMethods(remaining, method, mediaTypes, context, builder));
     }
 }
 class SubResourceLocators{
@@ -143,6 +148,9 @@ class SubResourceLocators{
     }
     public Optional<ResourceRouter.SubResourceLocator> finSubResource(String path) {
         return UriHandlers.match(path, subResourceLocators);
+    }
+    public Optional<ResourceRouter.ResourceMethod> findSubResourceMethods(String path, String method, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder){
+       return UriHandlers.mapMatched(path, subResourceLocators, (result, locator) -> locator.getSubResource(context, builder).match(result.get(), method, mediaTypes, context, builder));
     }
     static class DefaultSubResourceLocator implements ResourceRouter.SubResourceLocator{
         private PathTemplate uriTemplate;

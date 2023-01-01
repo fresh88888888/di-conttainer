@@ -36,7 +36,7 @@ public class SubResourceLocatorsTest {
 
         UriTemplate.MatchResult result = mock(UriTemplate.MatchResult.class);
         when(result.getRemaining()).thenReturn(null);
-        ResourceRouter.ResourceMethod resourceMethod = subResource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, infoBuilder).get();
+        ResourceRouter.ResourceMethod resourceMethod = subResource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, null, infoBuilder).get();
 
         assertEquals("Message.content", resourceMethod.toString());
         assertEquals("hello", ((Message)infoBuilder.getLastMatchedResource()).message);

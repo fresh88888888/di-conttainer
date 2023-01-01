@@ -1,18 +1,28 @@
 package org.ws.tdd.rest;
 
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.MediaType;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class RootResourceTest {
+    private ResourceContext context;
+    private Messages rootResource;
+    @BeforeEach
+    public void setup(){
+        rootResource = new Messages();
+        context = mock(ResourceContext.class);
+        when(context.getResource(eq(Messages.class))).thenReturn(rootResource);
+    }
     @Test
     public void should_get_uri_template_from_path_annotation() {
         ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
@@ -34,11 +44,14 @@ public class RootResourceTest {
             GET,        /messages/topics/{id},  Messages.topicId,           GET and URI match
             GET,        /messages/topics/1234,  Messages.topic1234,         GET and URI match
             GET,        /messages,              Messages.get,               GET with resource method without Path
+            GET,        /messages/1/content,    Message.content,            Map to sub-resource method
+            GET,        /messages/1/body,       MessageBody.get,            Map to sub-sub-resource method
             """)
-    public void should_resource_match_method_in_root_resource(String httpMethod, String path, String resourceMethod, String context) {
+    public void should_resource_match_method_in_root_resource(String httpMethod, String path, String resourceMethod, String content) {
+        UriInfoBuilder builder = new StubUriInfoBuilder();
         ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
         UriTemplate.MatchResult result = resource.getUriTemplate().match(path).get();
-        ResourceRouter.ResourceMethod method = resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, mock(UriInfoBuilder.class)).get();
+        ResourceRouter.ResourceMethod method = resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, context, builder).get();
 
         assertEquals(resourceMethod, method.toString());
     }
@@ -47,17 +60,17 @@ public class RootResourceTest {
         ResourceRouter.Resource resource = new SubResource(new Message());
         UriTemplate.MatchResult result = mock(UriTemplate.MatchResult.class);
         when(result.getRemaining()).thenReturn("/content");
-        assertTrue(resource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, mock(UriInfoBuilder.class)).isPresent());
+        assertTrue(resource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, context, mock(UriInfoBuilder.class)).isPresent());
     }
     @ParameterizedTest(name = "{2}")
     @CsvSource(textBlock = """
             GET,        /missing-messages/1,        GET and URI match
             POST,       /missing-messages,          http method not matched
             """)
-    public void should_return_empty_if_not_matched(String httpMethod, String path, String context) {
+    public void should_return_empty_if_not_matched(String httpMethod, String path, String content) {
         ResourceRouter.RootResource resource = new RootResourceClass(MissingMessages.class);
         UriTemplate.MatchResult result = resource.getUriTemplate().match(path).get();
-        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, mock(UriInfoBuilder.class)).isEmpty());
+        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, context, mock(UriInfoBuilder.class)).isEmpty());
     }
 
     //TODO: if no method / sub resource locator matches, return 404
@@ -65,18 +78,17 @@ public class RootResourceTest {
     @CsvSource(textBlock = """
             GET,        /messages/hello,        no matched resource method
             """)
-    public void should_return_empty_if_not_matched_ib_root_resource(String httpMethod, String uri, String context) {
+    public void should_return_empty_if_not_matched_ib_root_resource(String httpMethod, String uri, String content) {
         ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
         UriTemplate.MatchResult result = resource.getUriTemplate().match(uri).get();
-        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, mock(UriInfoBuilder.class)).isPresent());
+        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, context, mock(UriInfoBuilder.class)).isPresent());
     }
     @Test
     public void should_add_last_match_resource_to_uri_info_builder(){
         StubUriInfoBuilder uriInfoBuilder = new StubUriInfoBuilder();
-        uriInfoBuilder.addMatchedResource(new Messages());
         ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
         UriTemplate.MatchResult result = resource.getUriTemplate().match("/messages").get();
-        resource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, uriInfoBuilder);
+        resource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, context, uriInfoBuilder);
 
         assertTrue(uriInfoBuilder.getLastMatchedResource() instanceof Messages);
     }
@@ -157,6 +169,10 @@ public class RootResourceTest {
         public String topic1234() {
             return "topicId";
         }
+        @Path("/{id:[0-9]+}")
+        public Message getById() {
+            return new Message();
+        }
     }
     static class Message{
         @GET
@@ -164,6 +180,17 @@ public class RootResourceTest {
         @Produces(MediaType.TEXT_PLAIN)
         public String content() {
             return "content";
+        }
+        @Path("/body")
+        public MessageBody body() {
+            return new MessageBody();
+        }
+    }
+    static class MessageBody{
+        @GET
+        @Produces(MediaType.TEXT_PLAIN)
+        public String get() {
+            return "body";
         }
     }
 }
