@@ -72,8 +72,6 @@ public class RootResourceTest {
         UriTemplate.MatchResult result = resource.getUriTemplate().match(path).get();
         assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, context, mock(UriInfoBuilder.class)).isEmpty());
     }
-
-    //TODO: if no method / sub resource locator matches, return 404
     @ParameterizedTest(name = "{2}")
     @CsvSource(textBlock = """
             GET,        /messages/header,        No matched resource method
