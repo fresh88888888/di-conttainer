@@ -105,15 +105,15 @@ public class ResourceDispatcherTest {
         return unmatchedUriTemplate;
     }
 
-    private ResourceRouter.RootResource rootResource(UriTemplate uriTemplate) {
-        ResourceRouter.RootResource unmatched = mock(ResourceRouter.RootResource.class);
+    private ResourceRouter.Resource rootResource(UriTemplate uriTemplate) {
+        ResourceRouter.Resource unmatched = mock(ResourceRouter.Resource.class);
         when(unmatched.getUriTemplate()).thenReturn(uriTemplate);
         when(unmatched.match(any(), eq("GET"), eq(new String[]{MediaType.WILDCARD}), same(context), eq(builder))).thenReturn(Optional.empty());
         return unmatched;
     }
 
-    private ResourceRouter.RootResource rootResource(UriTemplate uriTemplate, ResourceRouter.ResourceMethod method) {
-        ResourceRouter.RootResource matched = mock(ResourceRouter.RootResource.class);
+    private ResourceRouter.Resource rootResource(UriTemplate uriTemplate, ResourceRouter.ResourceMethod method) {
+        ResourceRouter.Resource matched = mock(ResourceRouter.Resource.class);
         when(matched.getUriTemplate()).thenReturn(uriTemplate);
         when(matched.match(any(), eq("GET"), eq(new String[]{MediaType.WILDCARD}), same(context), eq(builder))).thenReturn(Optional.of(method));
         return matched;
