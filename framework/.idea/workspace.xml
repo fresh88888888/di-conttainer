@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: SubResourceLocators test case">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandler.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="重构">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
     </list>
@@ -219,7 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="142073000" />
+      <workItem from="1671101970944" duration="142193000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -466,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672400616971</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="重构">
+      <created>1672557337968</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1672557337968</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,13 +506,13 @@
     <MESSAGE value="TODO: path match with variable" />
     <MESSAGE value="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable" />
     <MESSAGE value="TODO: comparing result, with match literal, variable and specific variable" />
-    <MESSAGE value="重构" />
     <MESSAGE value="TODO: get uri template from path annotation" />
     <MESSAGE value="TODO: find resource method, matches the http request and http method" />
     <MESSAGE value="TODO: if sub resource locator matches uri, using it to do follow up matching" />
     <MESSAGE value="TODO: ResourceMethods test case" />
     <MESSAGE value="TODO: SubResourceLocators test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: SubResourceLocators test case" />
+    <MESSAGE value="重构" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

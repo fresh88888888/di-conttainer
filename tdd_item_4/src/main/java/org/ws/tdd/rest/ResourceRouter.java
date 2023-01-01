@@ -29,7 +29,6 @@ interface ResourceRouter {
     }
     interface SubResourceLocator extends UriHandler{
     }
-
 }
 class DefaultResourceRouter implements ResourceRouter {
     private Runtime runtime;
