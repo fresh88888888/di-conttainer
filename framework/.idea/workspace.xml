@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: ResourceMethods test case">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorsTest.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: SubResourceLocators test case">
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +73,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.ws.tdd.rest.UriHandlers" />
       <recent name="org.ws.tdd.rest.ResourceMethods.Result" />
       <recent name="Result" />
       <recent name="org.ws.tdd.rest.RootResourceClass.ResourceMethods" />
@@ -219,7 +219,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="136712000" />
+      <workItem from="1671101970944" duration="142073000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -459,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672393441868</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="TODO: SubResourceLocators test case">
+      <created>1672400616971</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1672400616971</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +505,8 @@
     <MESSAGE value="TODO: find resource method, matches the http request and http method" />
     <MESSAGE value="TODO: if sub resource locator matches uri, using it to do follow up matching" />
     <MESSAGE value="TODO: ResourceMethods test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: ResourceMethods test case" />
+    <MESSAGE value="TODO: SubResourceLocators test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: SubResourceLocators test case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
