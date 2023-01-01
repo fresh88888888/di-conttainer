@@ -76,12 +76,15 @@ public class RootResourceTest {
     //TODO: if no method / sub resource locator matches, return 404
     @ParameterizedTest(name = "{2}")
     @CsvSource(textBlock = """
-            GET,        /messages/hello,        no matched resource method
+            GET,        /messages/header,        No matched resource method
+            GET,        /messages/1/header,      No matched sub-resource method
             """)
-    public void should_return_empty_if_not_matched_ib_root_resource(String httpMethod, String uri, String content) {
+    public void should_return_empty_if_not_matched_in_root_resource(String httpMethod, String uri, String content) {
+        StubUriInfoBuilder uriInfoBuilder = new StubUriInfoBuilder();
+        uriInfoBuilder.addMatchedResource(new Messages());
         ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
         UriTemplate.MatchResult result = resource.getUriTemplate().match(uri).get();
-        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, context, mock(UriInfoBuilder.class)).isPresent());
+        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, context, uriInfoBuilder).isEmpty());
     }
     @Test
     public void should_add_last_match_resource_to_uri_info_builder(){
