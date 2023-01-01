@@ -28,6 +28,7 @@ interface ResourceRouter {
         GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder);
     }
     interface SubResourceLocator extends UriHandler{
+        Resource getSubResource(ResourceContext context, UriInfoBuilder uriInfoBuilder);
     }
 }
 class DefaultResourceRouter implements ResourceRouter {
@@ -48,8 +49,7 @@ class DefaultResourceRouter implements ResourceRouter {
             return (OutboundResponse) Response.status(Response.Status.NOT_FOUND).build();
         }
 
-        return (OutboundResponse) method.map(m -> m.call(resourceContext, builder)).map(entity -> Response.ok(entity).build())
-               .orElseGet(() -> Response.noContent().build());
+        return (OutboundResponse) method.map(m -> m.call(resourceContext, builder)).map(entity -> Response.ok(entity).build()).orElseGet(() -> Response.noContent().build());
     }
     private Optional<ResourceMethod> findResourceMethod(HttpServletRequest req, UriInfoBuilder builder, Optional<UriTemplate.MatchResult> matched, RootResource handler) {
         return handler.match(matched.get(), req.getMethod(), Collections.list(req.getHeaders(HttpHeaders.ACCEPT)).toArray(String[]::new), builder);
@@ -158,6 +158,17 @@ class SubResourceLocators{
         @Override
         public String toString() {
             return method.getDeclaringClass().getSimpleName() + "." + method.getName();
+        }
+        @Override
+        public ResourceRouter.Resource getSubResource(ResourceContext context, UriInfoBuilder uriInfoBuilder) {
+            Object resource = uriInfoBuilder.getLastMatchedResource();
+            try {
+                Object subResource = method.invoke(resource);
+                uriInfoBuilder.addMatchedResource(subResource);
+                return new SubResource(subResource);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

@@ -61,6 +61,25 @@ public class RootResourceTest {
     }
 
     //TODO: if no method / sub resource locator matches, return 404
+    @ParameterizedTest(name = "{2}")
+    @CsvSource(textBlock = """
+            GET,        /messages/hello,        no matched resource method
+            """)
+    public void should_return_empty_if_not_matched_ib_root_resource(String httpMethod, String uri, String context) {
+        ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
+        UriTemplate.MatchResult result = resource.getUriTemplate().match(uri).get();
+        assertTrue(resource.match(result, httpMethod, new String[]{MediaType.TEXT_PLAIN}, mock(UriInfoBuilder.class)).isPresent());
+    }
+    @Test
+    public void should_add_last_match_resource_to_uri_info_builder(){
+        StubUriInfoBuilder uriInfoBuilder = new StubUriInfoBuilder();
+        uriInfoBuilder.addMatchedResource(new Messages());
+        ResourceRouter.RootResource resource = new RootResourceClass(Messages.class);
+        UriTemplate.MatchResult result = resource.getUriTemplate().match("/messages").get();
+        resource.match(result, "GET", new String[]{MediaType.TEXT_PLAIN}, uriInfoBuilder);
+
+        assertTrue(uriInfoBuilder.getLastMatchedResource() instanceof Messages);
+    }
     //TODO: if resource class does not have a path annotation, throw illegal argument exception
     //TODO: Head and Options is special case
     @Path("/missing-messages")
