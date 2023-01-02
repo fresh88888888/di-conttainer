@@ -40,8 +40,14 @@ public class DefaultResourceMethodTest {
 
         assertEquals(new GenericEntity<>(List.of(), CallableResourceMethods.class.getMethod("getList").getGenericReturnType()), resourceMethod.call(context, builder));
     }
-    //TODO: injection - context
-    //TODO: injection - uri info: path, query, matrix...
+    //TODO: using default convertors for path, matrix, query, form, header, cookie
+    //TODO: default converters for int, float, double, byte, char and boolean
+    //TODO: default converters for class with converter constructor
+    //TODO: default converters for class with converter factory
+    //TODO: default converters for List, Set, SortSet
+    //TODO: injection - get injectable from resource context
+    //TODO: injection - can inject resource context itself
+    //TODO: injection - can inject uri info built from uri info builder
     private DefaultResourceMethod getResourceMethod(String method) throws NoSuchMethodException {
         return new DefaultResourceMethod(CallableResourceMethods.class.getMethod(method));
     }

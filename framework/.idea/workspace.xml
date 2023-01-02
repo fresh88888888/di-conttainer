@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: OPTIONS">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: return type: List&lt;String&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/HeadResourceMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/HeadResourceMethodTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceDispatcherTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceMethodsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ResourceMethodsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="172292000" />
+      <workItem from="1671101970944" duration="172817000" />
     </task>
     <task id="LOCAL-00001" summary="restful api">
       <created>1671781680255</created>
@@ -539,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672650788095</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="TODO: return type: List&lt;String&gt;">
+      <created>1672655050087</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1672655050087</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +560,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="throw other exception, use ExceptionMapper build response" />
     <MESSAGE value="throw exception mapper" />
     <MESSAGE value="    //TODO: providers gets exception mapper&#10;    //TODO: runtime delegate&#10;    //TODO: header delegate&#10;    //TODO: providers gets MessageBodyWriter&#10;    //TODO: MessageBodyWriter write" />
     <MESSAGE value="    //TODO: 500 if MessageBodyWriter not found&#10;    //TODO: 500 if ExceptionMapper&#10;    //TODO: 500 if header delegate" />
@@ -582,7 +584,8 @@
     <MESSAGE value="TODO: if resource class does not have a path annotation, throw illegal argument exception" />
     <MESSAGE value="TODO: HEAD" />
     <MESSAGE value="TODO: OPTIONS" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: OPTIONS" />
+    <MESSAGE value="TODO: return type: List&lt;String&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: return type: List&lt;String&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
