@@ -2,11 +2,11 @@ package org.ws.tdd.rest;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ResourceMethodsTest {
     @ParameterizedTest(name = "{3}")
@@ -21,6 +21,7 @@ public class ResourceMethodsTest {
             GET,        /messages/topics/{id},  Messages.topicId,           GET and URI match
             GET,        /messages/topics/1234,  Messages.topic1234,         GET and URI match
             GET,        /messages,              Messages.get,               GET with resource method without Path
+            HEAD,       /messages/head,         Messages.getHead,           HEAD with GET resource method
             """)
     public void should_resource_match_method_in_root_resource(String httpMethod, String path, String resourceMethod, String context) {
         ResourceMethods methods = new ResourceMethods(Messages.class.getMethods());
@@ -43,7 +44,15 @@ public class ResourceMethodsTest {
 
         assertTrue(methods.findResourceMethods(remaining, httpMethod).isEmpty());
     }
+    @Test
+    public void should_convert_get_resource_method_to_head_resource_method(){
+        ResourceMethods resourceMethods = new ResourceMethods(Messages.class.getMethods());
+        UriTemplate.MatchResult result = new PathTemplate("/messages").match("/messages/head").get();
+        ResourceRouter.ResourceMethod method = resourceMethods.findResourceMethods(result.getRemaining(), "HEAD").get();
 
+        assertInstanceOf(HeadResourceMethod.class, method);
+    }
+    //TODO: OPTIONS
     @Path("/missing-messages")
     static class MissingMessages {
         @GET
@@ -59,7 +68,12 @@ public class ResourceMethodsTest {
         public String get() {
             return "messages";
         }
-
+        @GET
+        @Path("/head")
+        @Produces(MediaType.TEXT_PLAIN)
+        public String getHead() {
+            return "head";
+        }
         @GET
         @Path("/hello")
         @Produces(MediaType.TEXT_PLAIN)

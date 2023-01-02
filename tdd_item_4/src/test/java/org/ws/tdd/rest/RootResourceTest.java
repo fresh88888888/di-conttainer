@@ -92,7 +92,6 @@ public class RootResourceTest {
 
         assertTrue(uriInfoBuilder.getLastMatchedResource() instanceof Messages);
     }
-    //TODO: if resource class does not have a path annotation, throw illegal argument exception
     @Test
     public void should_throw_illegal_argument_exception_if_root_resource_not_have_path_annotation(){
         assertThrows(IllegalArgumentException.class, () -> new ResourceHandler(Message.class));
@@ -112,6 +111,17 @@ public class RootResourceTest {
         @Produces(MediaType.TEXT_PLAIN)
         public String get() {
             return "messages";
+        }
+        @GET
+        @Path("/special")
+        public String getSpecial() {
+            return "special";
+        }
+        @HEAD
+        public void head(){
+        }
+        @OPTIONS
+        public void options(){
         }
         @GET
         @Path("/ah")

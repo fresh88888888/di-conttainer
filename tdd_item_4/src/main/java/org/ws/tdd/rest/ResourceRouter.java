@@ -58,11 +58,17 @@ class ResourceMethods{
                     .map(DefaultResourceMethod::new)
                     .collect(Collectors.groupingBy(ResourceRouter.ResourceMethod::getHttpMethod));
         }
-
         public Optional<ResourceRouter.ResourceMethod> findResourceMethods(String path, String method) {
+            return findMethod(path, method).or(() -> findAlterNative(path, method));
+        }
+        private Optional<ResourceRouter.ResourceMethod> findAlterNative(String path, String method){
+            return "HEAD".equals(method) ? findMethod(path, "GET").map(HeadResourceMethod::new) : Optional.empty();
+        }
+
+        private Optional<ResourceRouter.ResourceMethod> findMethod(String path, String method) {
             return Optional.ofNullable(resourceMethods.get(method)).flatMap(methods -> UriHandlers.match(path, methods, r -> r.getRemaining() == null));
         }
-    }
+}
 
 class DefaultResourceMethod implements ResourceRouter.ResourceMethod{
         private String httpMethod;
@@ -91,6 +97,24 @@ class DefaultResourceMethod implements ResourceRouter.ResourceMethod{
         public String toString() {
             return method.getDeclaringClass().getSimpleName() + "." + method.getName();
         }
+}
+class HeadResourceMethod implements ResourceRouter.ResourceMethod{
+    private ResourceRouter.ResourceMethod method;
+    public HeadResourceMethod(ResourceRouter.ResourceMethod method) {
+        this.method = method;
+    }
+    @Override
+    public String getHttpMethod() {
+        return method.getHttpMethod();
+    }
+    @Override
+    public GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder) {
+        return method.call(context, builder);
+    }
+    @Override
+    public UriTemplate getUriTemplate() {
+        return method.getUriTemplate();
+    }
 }
 class ResourceHandler implements ResourceRouter.Resource{
     private UriTemplate uriTemplate;
