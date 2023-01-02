@@ -62,11 +62,45 @@ class ResourceMethods{
             return findMethod(path, method).or(() -> findAlterNative(path, method));
         }
         private Optional<ResourceRouter.ResourceMethod> findAlterNative(String path, String method){
-            return "HEAD".equals(method) ? findMethod(path, "GET").map(HeadResourceMethod::new) : Optional.empty();
+            if (HttpMethod.HEAD.equals(method)) {
+                return findMethod(path, HttpMethod.GET).map(HeadResourceMethod::new);
+            }
+            if (HttpMethod.OPTIONS.equals(method)) {
+                return Optional.of(new OptionsResourceMethod(path));
+            }
+            return Optional.empty();
         }
 
         private Optional<ResourceRouter.ResourceMethod> findMethod(String path, String method) {
             return Optional.ofNullable(resourceMethods.get(method)).flatMap(methods -> UriHandlers.match(path, methods, r -> r.getRemaining() == null));
+        }
+        class OptionsResourceMethod implements ResourceRouter.ResourceMethod{
+            private String path;
+            public OptionsResourceMethod(String path) {
+                this.path = path;
+            }
+            @Override
+            public String getHttpMethod() {
+                return null;
+            }
+            @Override
+            public GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder) {
+                return new GenericEntity<>(Response.noContent().allow(findAllowedMethods()).build(), Response.class);
+            }
+            private Set<String> findAllowedMethods() {
+                List<String> methods = List.of(HttpMethod.GET, HttpMethod.OPTIONS, HttpMethod.HEAD, HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.PATCH, HttpMethod.POST);
+                Set<String> allowed = methods.stream().filter(method -> findMethod(path, method).isPresent()).collect(Collectors.toSet());
+                allowed.add(HttpMethod.OPTIONS);
+                if (allowed.contains(HttpMethod.GET)) {
+                    allowed.add(HttpMethod.HEAD);
+                }
+                return allowed;
+            }
+
+            @Override
+            public UriTemplate getUriTemplate() {
+                return null;
+            }
         }
 }
 

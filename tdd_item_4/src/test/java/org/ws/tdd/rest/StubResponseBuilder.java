@@ -5,10 +5,7 @@ import jakarta.ws.rs.ext.Providers;
 
 import java.lang.annotation.Annotation;
 import java.net.URI;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
+import java.util.*;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -20,12 +17,14 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
     private Providers providers = mock(Providers.class);
     private Annotation[] annotations = new Annotation[0];
     private MediaType mediaType = MediaType.TEXT_PLAIN_TYPE;
+    private Set<String> allowed = new HashSet<>();
 
     @Override
     public Response build() {
         OutboundResponse response = mock(OutboundResponse.class);
         when(response.getGenericEntity()).thenReturn(entity);
         when(response.getStatus()).thenReturn(status.getStatusCode());
+        when(response.getAllowedMethods()).thenReturn(allowed);
         when(response.getStatusInfo()).thenReturn(status);
         when(response.getAnnotations()).thenReturn(annotations);
         when(response.getMediaType()).thenReturn(mediaType);
@@ -66,7 +65,8 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
 
     @Override
     public Response.ResponseBuilder allow(Set<String> methods) {
-        return null;
+        allowed.addAll(methods);
+        return this;
     }
 
     @Override
