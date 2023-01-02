@@ -1,5 +1,6 @@
 package org.ws.tdd.rest;
 
+import jakarta.ws.rs.HttpMethod;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.GenericEntity;
 import org.junit.jupiter.api.Assertions;
@@ -37,6 +38,6 @@ public class HeadResourceMethodTest {
         HeadResourceMethod headResourceMethod = new HeadResourceMethod(resourceMethod);
         when(resourceMethod.getHttpMethod()).thenReturn("GET");
 
-        assertEquals("GET", headResourceMethod.getHttpMethod());
+        assertEquals(HttpMethod.HEAD, headResourceMethod.getHttpMethod());
     }
 }

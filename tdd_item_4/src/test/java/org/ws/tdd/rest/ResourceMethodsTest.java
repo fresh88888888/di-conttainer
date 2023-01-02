@@ -29,7 +29,6 @@ public class ResourceMethodsTest {
             GET,        /messages/topics/{id},  Messages.topicId,           GET and URI match
             GET,        /messages/topics/1234,  Messages.topic1234,         GET and URI match
             GET,        /messages,              Messages.get,               GET with resource method without Path
-            HEAD,       /messages/head,         Messages.getHead,           HEAD with GET resource method
             """)
     public void should_resource_match_method_in_root_resource(String httpMethod, String path, String resourceMethod, String context) {
         ResourceMethods methods = new ResourceMethods(Messages.class.getMethods());

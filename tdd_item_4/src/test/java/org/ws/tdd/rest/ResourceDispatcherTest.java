@@ -5,6 +5,7 @@ import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.RuntimeDelegate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,7 +54,19 @@ public class ResourceDispatcherTest {
         assertSame(response.getGenericEntity(), entity);
         assertEquals(200, response.getStatus());
     }
+    @Test
+    public void should_use_response_object_from_resource_method(){
+        Response returnResponse = mock(OutboundResponse.class);
+        when(returnResponse.getStatus()).thenReturn(304);
+        GenericEntity entity = new GenericEntity(returnResponse, Response.class);
 
+        DefaultResourceRouter router = new DefaultResourceRouter(runtime, List.of(
+                rootResource(matched("/users/1", result("/1")), returns(entity)),
+                rootResource(unmatched("/users/1"))));
+
+        OutboundResponse response = router.dispatch(request, context);
+        assertEquals(304, response.getStatus());
+    }
     @Test
     public void should_sort_matched_root_resource_descending_order() {
         GenericEntity entity1 = new GenericEntity("1", String.class);

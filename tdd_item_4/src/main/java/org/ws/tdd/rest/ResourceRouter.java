@@ -8,6 +8,7 @@ import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.function.Function;
@@ -41,7 +42,9 @@ class DefaultResourceRouter implements ResourceRouter {
             return (OutboundResponse) Response.status(Response.Status.NOT_FOUND).build();
         }
 
-        return (OutboundResponse) method.map(m -> m.call(resourceContext, builder)).map(entity -> Response.ok(entity).build()).orElseGet(() -> Response.noContent().build());
+        return (OutboundResponse) method.map(m -> m.call(resourceContext, builder))
+                .map(entity -> (entity.getEntity() instanceof OutboundResponse) ? (OutboundResponse) entity.getEntity() : Response.ok(entity).build())
+                .orElseGet(() -> Response.noContent().build());
     }
     private Optional<ResourceMethod> findResourceMethod(HttpServletRequest req, ResourceContext resourceContext, UriInfoBuilder builder, Optional<UriTemplate.MatchResult> matched, Resource handler) {
         return handler.match(matched.get(), req.getMethod(), Collections.list(req.getHeaders(HttpHeaders.ACCEPT)).toArray(String[]::new), resourceContext, builder);
@@ -81,7 +84,7 @@ class ResourceMethods{
             }
             @Override
             public String getHttpMethod() {
-                return null;
+                return HttpMethod.OPTIONS;
             }
             @Override
             public GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder) {
@@ -96,10 +99,9 @@ class ResourceMethods{
                 }
                 return allowed;
             }
-
             @Override
             public UriTemplate getUriTemplate() {
-                return null;
+                return new PathTemplate(path);
             }
         }
 }
@@ -125,7 +127,12 @@ class DefaultResourceMethod implements ResourceRouter.ResourceMethod{
 
         @Override
         public GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder) {
-            return null;
+            try {
+                Object result = method.invoke(builder.getLastMatchedResource());
+                return new GenericEntity<>(result, method.getGenericReturnType());
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
         }
         @Override
         public String toString() {
@@ -139,7 +146,7 @@ class HeadResourceMethod implements ResourceRouter.ResourceMethod{
     }
     @Override
     public String getHttpMethod() {
-        return method.getHttpMethod();
+        return HttpMethod.HEAD;
     }
     @Override
     public GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder) {
