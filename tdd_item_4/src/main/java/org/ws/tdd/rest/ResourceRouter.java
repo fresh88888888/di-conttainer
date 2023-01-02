@@ -98,7 +98,7 @@ class ResourceHandler implements ResourceRouter.Resource{
     private SubResourceLocators subResourceLocators;
     private Function<ResourceContext, Object> resource;
     public ResourceHandler(Class<?> resourceClass) {
-        this(resourceClass, new PathTemplate(resourceClass.getAnnotation(Path.class).value()), rc -> rc.getResource(resourceClass));
+        this(resourceClass, new PathTemplate(getTemplate(resourceClass)), rc -> rc.getResource(resourceClass));
     }
     public ResourceHandler(Object resource, UriTemplate uriTemplate) {
         this(resource.getClass(), uriTemplate, re -> resource);
@@ -115,13 +115,17 @@ class ResourceHandler implements ResourceRouter.Resource{
         builder.addMatchedResource(resource.apply(context));
         return resourceMethods.findResourceMethods(remaining, httpMethod).or(() -> subResourceLocators.findSubResourceMethods(remaining, httpMethod, mediaTypes, context, builder));
     }
-
     @Override
     public UriTemplate getUriTemplate() {
         return uriTemplate;
     }
+    private static String getTemplate(Class<?> resourceClass) {
+        if(!resourceClass.isAnnotationPresent(Path.class)){
+            throw new IllegalArgumentException();
+        }
+        return resourceClass.getAnnotation(Path.class).value();
+    }
 }
-
 class SubResourceLocators{
     private List<ResourceRouter.Resource> subResourceLocators;
     public SubResourceLocators(Method[] methods) {
@@ -144,11 +148,6 @@ class SubResourceLocators{
             return uriTemplate;
         }
         @Override
-        public String toString() {
-            return method.getDeclaringClass().getSimpleName() + "." + method.getName();
-        }
-
-        @Override
         public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String httpMethod, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder) {
             Object resource = builder.getLastMatchedResource();
             try {
@@ -157,6 +156,10 @@ class SubResourceLocators{
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+        @Override
+        public String toString() {
+            return method.getDeclaringClass().getSimpleName() + "." + method.getName();
         }
     }
 }
