@@ -11,11 +11,12 @@ import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static org.ws.tdd.rest.DefaultResourceMethod.ValueConverter.singleValued;
 
 interface ResourceRouter {
     OutboundResponse dispatch(HttpServletRequest req, ResourceContext resourceContext);
@@ -110,6 +111,9 @@ class ResourceMethods{
 }
 
 class DefaultResourceMethod implements ResourceRouter.ResourceMethod{
+        private static ValueProvider pathParam = (parameter, uriInfo) -> Optional.ofNullable(parameter.getAnnotation(PathParam.class)).map(annotation -> uriInfo.getPathParameters().get(annotation.value()));
+        private static ValueProvider queryParam = (parameter, uriInfo) -> Optional.ofNullable(parameter.getAnnotation(QueryParam.class)).map(annotation -> uriInfo.getQueryParameters().get(annotation.value()));
+    private static List<ValueProvider> providers = List.of(pathParam, queryParam);
         private String httpMethod;
         private UriTemplate uriTemplate;
         private Method method;
@@ -132,31 +136,56 @@ class DefaultResourceMethod implements ResourceRouter.ResourceMethod{
         public GenericEntity<?> call(ResourceContext context, UriInfoBuilder builder) {
             try {
                 UriInfo uriInfo = builder.createUriInfo();
-                Object[] parameters = Arrays.stream(method.getParameters()).map(parameter -> {
-                    List<String> values;
-                    if(parameter.isAnnotationPresent(PathParam.class)) {
-                        String name = parameter.getAnnotation(PathParam.class).value();
-                        values = uriInfo.getPathParameters().get(name);
-                    }else{
-                        String name = parameter.getAnnotation(QueryParam.class).value();
-                        values = uriInfo.getQueryParameters().get(name);
-                    }
-                    String value = values.get(0);
-                    if(parameter.getType() == int.class){
-                        return Integer.parseInt(value);
-                    }
-                    return value;
-                }).toList().toArray(Object[]::new);
-                Object result = method.invoke(builder.getLastMatchedResource(), parameters);
+                Object result = method.invoke(builder.getLastMatchedResource(), Arrays.stream(method.getParameters()).map(parameter -> providers.stream()
+                        .map(provider -> provider.provider(parameter, uriInfo))
+                        .filter(Optional::isPresent)
+                        .findFirst()
+                        .flatMap(values -> values.flatMap(v -> convert(parameter, v))).orElse(null)).toArray(Object[]::new));
+
                 return result != null ? new GenericEntity<>(result, method.getGenericReturnType()) : null;
             } catch (IllegalAccessException | InvocationTargetException e) {
                 throw new RuntimeException(e);
+            }
+        }
+    private Optional<Object> convert(Parameter parameter, List<String> values) {
+        return PrimitiveConverter.converter(parameter, values)
+                .or(() -> ConverterConstructor.convert(parameter.getType(), values.get(0)));
+    }
+    interface ValueProvider{
+            Optional<List<String>> provider(Parameter parameter, UriInfo uriInfo);
+        }
+        interface ValueConverter<T>{
+            T fromString(List<String> values);
+            static <T> ValueConverter<T> singleValued(Function<String, T> converter){
+                return values -> converter.apply(values.get(0));
             }
         }
         @Override
         public String toString() {
             return method.getDeclaringClass().getSimpleName() + "." + method.getName();
         }
+}
+class PrimitiveConverter{
+    private static Map<Type, DefaultResourceMethod.ValueConverter<Object>> primitives = Map.of(
+            int.class, singleValued(Integer::parseInt),
+            double.class, singleValued(Double::parseDouble),
+            short.class, singleValued(Short::parseShort),
+            byte.class, singleValued(Byte::parseByte),
+            boolean.class, singleValued(Boolean::parseBoolean),
+            String.class, singleValued(s -> s)
+    );
+    public static Optional<Object> converter(Parameter parameter, List<String> values) {
+        return Optional.ofNullable(primitives.get(parameter.getType())).map(c -> c.fromString(values));
+    }
+}
+class ConverterConstructor {
+    public static Optional<Object> convert(Class<?> converter, String value) {
+        try {
+            return Optional.of(converter.getConstructor(String.class).newInstance(value));
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            return Optional.empty();
+        }
+    }
 }
 class HeadResourceMethod implements ResourceRouter.ResourceMethod{
     private ResourceRouter.ResourceMethod method;
