@@ -88,7 +88,8 @@ public class DefaultResourceMethodTest {
                 new InjectableTypeTestCase(short.class, "128", (short)128),
                 new InjectableTypeTestCase(byte.class, "42", (byte)42),
                 new InjectableTypeTestCase(boolean.class, "true", true),
-                new InjectableTypeTestCase(BigDecimal.class, "123456", new BigDecimal("123456"))
+                new InjectableTypeTestCase(BigDecimal.class, "123456", new BigDecimal("123456")),
+                new InjectableTypeTestCase(Convert.class, "Factory", Convert.Factory)
         );
         List<String> paramTypes =List.of("getPathParam", "getQueryParam");
 
@@ -103,11 +104,8 @@ public class DefaultResourceMethodTest {
         return tests;
     }
 
-    //TODO: using default convertors for path, matrix, query, form, header, cookie
-    //TODO: default convertors for int, float, double, byte, char, String and boolean
-    //TODO: default convertors for class with converter constructor
-    //TODO: default convertors for class with converter factory
-    //TODO: default convertors for List, Set, SortSet
+    //TODO: using default convertors for matrix, query, form, header, cookie
+    //TODO: default convertors for List, Set, SortSet, Array
     //TODO: injection - get injectable from resource context
     //TODO: injection - can inject resource context itself
     //TODO: injection - can inject uri info built from uri info builder
@@ -148,6 +146,8 @@ public class DefaultResourceMethodTest {
         @GET
         String getPathParam(@PathParam("param") BigDecimal value);
         @GET
+        String getPathParam(@PathParam("param") Convert value);
+        @GET
         String getQueryParam(@QueryParam("param") String value);
         @GET
         String getQueryParam(@QueryParam("param") int value);
@@ -161,7 +161,12 @@ public class DefaultResourceMethodTest {
         String getQueryParam(@QueryParam("param") boolean value);
         @GET
         String getQueryParam(@QueryParam("param") BigDecimal value);
+        @GET
+        String getQueryParam(@QueryParam("param") Convert value);
     }
 
     record LastCal(String name, List<Object> arguments) {}
+}
+enum Convert{
+    Primitive, Constructor, Factory
 }
