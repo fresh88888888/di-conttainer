@@ -5,6 +5,7 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.container.ResourceContext;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.MultivaluedHashMap;
 import jakarta.ws.rs.core.UriInfo;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -32,8 +34,8 @@ public class DefaultResourceMethodTest {
     private CallableResourceMethods resource;
     private UriInfo uriInfo;
     private MultivaluedHashMap<String, String> parameters;
-
     private LastCal lastCal;
+    private SomeServiceInContext service;
 
     @BeforeEach
     public void setup() {
@@ -46,12 +48,14 @@ public class DefaultResourceMethodTest {
         context = mock(ResourceContext.class);
         builder = mock(UriInfoBuilder.class);
         uriInfo = mock(UriInfo.class);
+        service = mock(SomeServiceInContext.class);
         parameters = new MultivaluedHashMap<>();
 
         when(builder.getLastMatchedResource()).thenReturn(resource);
         when(builder.createUriInfo()).thenReturn(uriInfo);
         when(uriInfo.getPathParameters()).thenReturn(parameters);
         when(uriInfo.getQueryParameters()).thenReturn(parameters);
+        when(context.getResource(eq(SomeServiceInContext.class))).thenReturn(service);
     }
 
     private static String getMethodName(String name, List<? extends Class<?>> classStream) {
@@ -79,7 +83,7 @@ public class DefaultResourceMethodTest {
     }
     record InjectableTypeTestCase(Class<?> type, String name, Object value){}
     @TestFactory
-    public List<DynamicTest> injectableTypes(){
+    public List<DynamicTest> inject_convertable_types(){
         List<DynamicTest> tests = new ArrayList<>();
         List<InjectableTypeTestCase> typeCases = List.of(
                 new InjectableTypeTestCase(String.class, "string", "string"),
@@ -103,12 +107,24 @@ public class DefaultResourceMethodTest {
 
         return tests;
     }
+    @TestFactory
+    public List<DynamicTest> inject_context_object(){
+        List<DynamicTest> tests = new ArrayList<>();
+        List<InjectableTypeTestCase> typeCases = List.of(
+                new InjectableTypeTestCase(SomeServiceInContext.class, "N/A", service),
+                new InjectableTypeTestCase(ResourceContext.class, "N/A", context),
+                new InjectableTypeTestCase(UriInfo.class, "N/A", uriInfo)
+        );
+        for (InjectableTypeTestCase testCase: typeCases) {
+            tests.add(DynamicTest.dynamicTest("should inject " + testCase.type.getSimpleName() + " to Context", () -> {
+                verifyResourceMethodCalled("getContext", testCase.type, testCase.name, testCase.value);
+            }));
+        }
+        return tests;
+    }
 
     //TODO: using default convertors for matrix, query, form, header, cookie
     //TODO: default convertors for List, Set, SortSet, Array
-    //TODO: injection - get injectable from resource context
-    //TODO: injection - can inject resource context itself
-    //TODO: injection - can inject uri info built from uri info builder
     private void verifyResourceMethodCalled(String method, Class<?> type, String paramString, Object paramValue) throws NoSuchMethodException {
         DefaultResourceMethod resourceMethod = getResourceMethod(method, type);
         parameters.put("param", List.of(paramString));
@@ -148,6 +164,12 @@ public class DefaultResourceMethodTest {
         @GET
         String getPathParam(@PathParam("param") Convert value);
         @GET
+        String getContext(@Context SomeServiceInContext service);
+        @GET
+        String getContext(@Context ResourceContext context);
+        @GET
+        String getContext(@Context UriInfo uriInfo);
+        @GET
         String getQueryParam(@QueryParam("param") String value);
         @GET
         String getQueryParam(@QueryParam("param") int value);
@@ -169,4 +191,7 @@ public class DefaultResourceMethodTest {
 }
 enum Convert{
     Primitive, Constructor, Factory
+}
+interface SomeServiceInContext{
+
 }
