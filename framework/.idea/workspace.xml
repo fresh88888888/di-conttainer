@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="SubResourceLocator test case">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: get url no in exist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/IntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/IntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/StubResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/StubResponseBuilder.java" afterDir="false" />
@@ -89,7 +89,7 @@
       <recent name="org.ws.tdd.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'org.ws.tdd.rest'">
+  <component name="RunManager" selected="Gradle.IntegrationTest">
     <configuration name="DefaultResourceMethodTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -104,6 +104,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.ws.tdd.rest.DefaultResourceMethodTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="IntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.IntegrationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,29 +182,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="Tests in 'org.ws.tdd.rest'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.IntegrationTest" />
         <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
         <item itemvalue="Gradle.IntegrationTest.should_return_404_if_url_in_exist" />
         <item itemvalue="Gradle.SubResourceLocatorTest" />
         <item itemvalue="Gradle.DefaultResourceMethodTest" />
-        <item itemvalue="Gradle.SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method" />
       </list>
     </recent_temporary>
   </component>
@@ -223,14 +223,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="209421000" />
-    </task>
-    <task id="LOCAL-00007" summary="throw other exception, use ExceptionMapper build response">
-      <created>1672039772124</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1672039772124</updated>
+      <workItem from="1671101970944" duration="210205000" />
     </task>
     <task id="LOCAL-00008" summary="throw exception mapper">
       <created>1672045275758</created>
@@ -568,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672809420843</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="TODO: get url no in exist">
+      <created>1672818279791</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1672818279791</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改一个bug" />
     <MESSAGE value="根据与 Path 匹配结果，降序排列 RootResource，选择第一个的 RootResource" />
     <MESSAGE value="如果没有匹配的 RootResource，则构造 404 的 Response &#10;如果返回的 RootResource 中无法匹配剩余 Path，则构造 404 的 Response &#10;如果 ResourceMethod 返回 null，则构造 204 的 Response" />
     <MESSAGE value="TODO: if path not match uri template ,return empty" />
@@ -611,7 +610,8 @@
     <MESSAGE value="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder" />
     <MESSAGE value="TODO: 重构&#10;SubResourceLocator test case" />
     <MESSAGE value="SubResourceLocator test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="SubResourceLocator test case" />
+    <MESSAGE value="TODO: get url no in exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: get url no in exist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

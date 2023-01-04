@@ -39,6 +39,7 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
 
     @Override
     public Response.ResponseBuilder status(int status) {
+        this.status = Response.Status.fromStatusCode(status);
         return this;
     }
 

@@ -7,6 +7,8 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.NewCookie;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Providers;
 import jakarta.ws.rs.ext.RuntimeDelegate;
 import org.junit.jupiter.api.Assertions;
@@ -38,6 +40,7 @@ public class IntegrationTest extends ServletTest{
         providers = mock(Providers.class);
 
         when(runtime.getResourceRouter()).thenReturn(router);
+        when(runtime.createUriInfoBuilder(any())).thenReturn(new StubUriInfoBuilder());
         when(runtime.createResourceContext(any(), any())).thenReturn(context);
         when(runtime.getProviders()).thenReturn(providers);
 
@@ -61,12 +64,24 @@ public class IntegrationTest extends ServletTest{
                 return value.getName() + "=" + value.getValue();
             }
         });
+        when(providers.getExceptionMapper(any())).thenReturn(new ExceptionMapper<Throwable>() {
+            @Override
+            public Response toResponse(Throwable exception) {
+                exception.printStackTrace();
+                return new StubResponseBuilder().status(500).build();
+            }
+        });
     }
     //TODO: get url (root/sub)
     //TODO: get url throw exception
     @Test
     public void should_return_404_if_url_in_exist(){
         HttpResponse<String> response = get("/customers");
+        assertEquals(response.statusCode(), 404);
+    }
+    @Test
+    public void should_return_404_if_user_not_exist(){
+        HttpResponse<String> response = get("/users/lisi");
         assertEquals(response.statusCode(), 404);
     }
 }
