@@ -23,7 +23,7 @@ public class ConverterTest {
 
     @Test
     public void should_convert_via_convert_factory(){
-        assertEquals(Optional.of(Convert.Factory), ConverterFactory.convert(Convert.class, "Factory"));
+        assertEquals(Optional.of(InjectableCallerTest.Convert.Factory), ConverterFactory.convert(DefaultResourceMethodTest.Convert.class, "Factory"));
     }
 }
 class NoConverter{
