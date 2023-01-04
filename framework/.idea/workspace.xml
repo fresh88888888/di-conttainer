@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: injection - can inject resource context itself">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder">
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/MethodInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +74,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.ws.tdd.rest.MethodInvoker" />
       <recent name="org.ws.tdd.rest.PrimitiveConverter" />
       <recent name="org.ws.tdd.rest.UriHandlers" />
       <recent name="org.ws.tdd.rest.ResourceMethods.Result" />
       <recent name="Result" />
-      <recent name="org.ws.tdd.rest.RootResourceClass.ResourceMethods" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="org.ws.tdd.rest" />
@@ -86,76 +87,7 @@
       <recent name="org.ws.tdd.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.DefaultResourceMethodTest.inject_context_object">
-    <configuration name="ConverterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.ConverterTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ConverterTest.should_convert_via_convert_factory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.ConverterTest.should_convert_via_convert_factory&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="DefaultResourceMethodTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.ws.tdd.rest.DefaultResourceMethodTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.SubResourceLocatorTest">
     <configuration name="DefaultResourceMethodTest.inject_context_object" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -170,6 +102,75 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.ws.tdd.rest.DefaultResourceMethodTest.inject_context_object&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SubResourceLocatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.SubResourceLocatorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SubResourceLocatorTest.should_inject_string_path_param_to_sub_resource_method" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../tdd_item_4" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.ws.tdd.rest.SubResourceLocatorTest.should_inject_string_path_param_to_sub_resource_method&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DefaultResourceMethodTest.inject_context_object" />
-        <item itemvalue="Gradle.DefaultResourceMethodTest" />
+        <item itemvalue="Gradle.SubResourceLocatorTest" />
+        <item itemvalue="Gradle.SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method" />
+        <item itemvalue="Gradle.SubResourceLocatorTest.should_inject_string_path_param_to_sub_resource_method" />
         <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
-        <item itemvalue="Gradle.ConverterTest" />
-        <item itemvalue="Gradle.ConverterTest.should_convert_via_convert_factory" />
+        <item itemvalue="Gradle.DefaultResourceMethodTest.inject_context_object" />
       </list>
     </recent_temporary>
   </component>
@@ -220,14 +221,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="197134000" />
-    </task>
-    <task id="LOCAL-00002" summary="restful api">
-      <created>1671781708768</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1671781708768</updated>
+      <workItem from="1671101970944" duration="202490000" />
     </task>
     <task id="LOCAL-00003" summary="restful api">
       <created>1671785012006</created>
@@ -565,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672738034397</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder">
+      <created>1672799743786</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1672799743786</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="代码重构" />
     <MESSAGE value="设计架构愿景" />
     <MESSAGE value="分解任务" />
     <MESSAGE value="修改一个bug" />
@@ -608,7 +608,8 @@
     <MESSAGE value="TODO: using default convertors for path, matrix, query, form, header, cookie&#10;TODO: default convertors for int, float, double, byte, char, String and boolean" />
     <MESSAGE value="ConverterConstructor test case" />
     <MESSAGE value="TODO: injection - can inject resource context itself" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: injection - can inject resource context itself" />
+    <MESSAGE value="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
