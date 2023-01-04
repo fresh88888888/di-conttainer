@@ -28,17 +28,18 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
         when(response.getStatusInfo()).thenReturn(status);
         when(response.getAnnotations()).thenReturn(annotations);
         when(response.getMediaType()).thenReturn(mediaType);
+        when(response.getHeaders()).thenReturn(new MultivaluedHashMap<>());
         return response;
     }
 
     @Override
     public Response.ResponseBuilder clone() {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder status(int status) {
-        return null;
+        return this;
     }
 
     @Override
@@ -55,12 +56,12 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
 
     @Override
     public Response.ResponseBuilder entity(Object entity, Annotation[] annotations) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder allow(String... methods) {
-        return null;
+        return this;
     }
 
     @Override
@@ -71,12 +72,12 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
 
     @Override
     public Response.ResponseBuilder cacheControl(CacheControl cacheControl) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder encoding(String encoding) {
-        return null;
+        return this;
     }
 
     @Override
@@ -87,91 +88,91 @@ public class StubResponseBuilder extends Response.ResponseBuilder {
 
     @Override
     public Response.ResponseBuilder replaceAll(MultivaluedMap<String, Object> headers) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder language(String language) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder language(Locale language) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder type(MediaType type) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder type(String type) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder variant(Variant variant) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder contentLocation(URI location) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder cookie(NewCookie... cookies) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder expires(Date expires) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder lastModified(Date lastModified) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder location(URI location) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder tag(EntityTag tag) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder tag(String tag) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder variants(Variant... variants) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder variants(List<Variant> variants) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder links(Link... links) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder link(URI uri, String rel) {
-        return null;
+        return this;
     }
 
     @Override
     public Response.ResponseBuilder link(String uri, String rel) {
-        return null;
+        return this;
     }
 }

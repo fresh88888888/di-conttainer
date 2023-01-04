@@ -1,12 +1,23 @@
 package org.ws.tdd.rest;
 
 import jakarta.servlet.Servlet;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.ext.Providers;
 import jakarta.ws.rs.ext.RuntimeDelegate;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import java.net.http.HttpResponse;
+import java.util.List;
+import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -22,7 +33,7 @@ public class IntegrationTest extends ServletTest{
     @Override
     protected Servlet getServlet() {
         runtime = mock(Runtime.class);
-        router = mock(ResourceRouter.class);
+        router = new DefaultResourceRouter(runtime, List.of(new ResourceHandler(UsersApi.class)));
         context = mock(ResourceContext.class);
         providers = mock(Providers.class);
 
@@ -38,6 +49,7 @@ public class IntegrationTest extends ServletTest{
         delegate = mock(RuntimeDelegate.class);
         RuntimeDelegate.setInstance(delegate);
 
+        when(delegate.createResponseBuilder()).thenReturn(new StubResponseBuilder());
         when(delegate.createHeaderDelegate(NewCookie.class)).thenReturn(new RuntimeDelegate.HeaderDelegate<>() {
             @Override
             public NewCookie fromString(String value) {
@@ -52,5 +64,59 @@ public class IntegrationTest extends ServletTest{
     }
     //TODO: get url (root/sub)
     //TODO: get url throw exception
-    //TODO: get url no in exist
+    @Test
+    public void should_return_404_if_url_in_exist(){
+        HttpResponse<String> response = get("/customers");
+        assertEquals(response.statusCode(), 404);
+    }
+}
+record UserData(String name, String email){
+}
+class User{
+    private String id;
+    private UserData data;
+
+    public User(String id, UserData data) {
+        this.id = id;
+        this.data = data;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public UserData getData() {
+        return data;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
+    }
+}
+@Path("/users")
+class UsersApi{
+    private List<User> users;
+    public UsersApi() {
+        users = List.of(new User("zhang san", new UserData("zhang san", "zhang.san@foxmail.com.cn")));
+    }
+
+    @Path("{id}")
+    public UserApi findUserById(@PathParam("id") String id){
+       return users.stream().filter(user -> user.getId().equals(id)).findFirst().map(UserApi::new).orElseThrow(() -> new WebApplicationException(404));
+    }
+}
+class UserApi{
+    private User user;
+
+    public UserApi(User user) {
+        this.user = user;
+    }
+
+    @GET
+    public String get(){
+        return "";
+    }
 }
