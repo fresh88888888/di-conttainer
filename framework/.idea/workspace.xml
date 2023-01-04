@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/MethodInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: 重构&#10;SubResourceLocator test case">
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
       <recent name="org.ws.tdd.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SubResourceLocatorTest">
+  <component name="RunManager" selected="Gradle.Tests in 'org.ws.tdd.rest'">
     <configuration name="DefaultResourceMethodTest.inject_context_object" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -205,10 +202,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
         <item itemvalue="Gradle.SubResourceLocatorTest" />
         <item itemvalue="Gradle.SubResourceLocatorTest.should_inject_int_path_param_to_sub_resource_method" />
         <item itemvalue="Gradle.SubResourceLocatorTest.should_inject_string_path_param_to_sub_resource_method" />
-        <item itemvalue="Gradle.Tests in 'org.ws.tdd.rest'" />
         <item itemvalue="Gradle.DefaultResourceMethodTest.inject_context_object" />
       </list>
     </recent_temporary>
@@ -221,14 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="202490000" />
-    </task>
-    <task id="LOCAL-00003" summary="restful api">
-      <created>1671785012006</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1671785012006</updated>
+      <workItem from="1671101970944" duration="202582000" />
     </task>
     <task id="LOCAL-00004" summary="restful api">
       <created>1671789817255</created>
@@ -566,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672799743786</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="TODO: 重构&#10;SubResourceLocator test case">
+      <created>1672805000836</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1672805000836</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="设计架构愿景" />
     <MESSAGE value="分解任务" />
     <MESSAGE value="修改一个bug" />
     <MESSAGE value="根据与 Path 匹配结果，降序排列 RootResource，选择第一个的 RootResource" />
@@ -609,7 +605,8 @@
     <MESSAGE value="ConverterConstructor test case" />
     <MESSAGE value="TODO: injection - can inject resource context itself" />
     <MESSAGE value="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder" />
+    <MESSAGE value="TODO: 重构&#10;SubResourceLocator test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: 重构&#10;SubResourceLocator test case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

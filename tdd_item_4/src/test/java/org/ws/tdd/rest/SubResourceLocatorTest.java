@@ -87,7 +87,6 @@ public class SubResourceLocatorTest {
         assertEquals(getMethodName(methodName, List.of(type)), lastCal.name);
         assertEquals(List.of(paramValue), lastCal.arguments);
     }
-
     interface SubResourceMethods{
         @Path("/message/{param}")
         @Produces(MediaType.TEXT_PLAIN)
@@ -145,7 +144,6 @@ public class SubResourceLocatorTest {
         @Produces(MediaType.TEXT_PLAIN)
         Message getQueryParam(@QueryParam("param") BigDecimal path);
     }
-
     static class Message{
         @GET
         @Produces(MediaType.TEXT_PLAIN)
