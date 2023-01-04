@@ -6,24 +6,33 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.UriInfo;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Parameter;
 import java.lang.reflect.Proxy;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 public class SubResourceLocatorTest extends InjectableCallerTest {
     private UriTemplate.MatchResult result;
+    private Map<String, String> matchedPathParameters = Map.of("param", "param");
 
     @BeforeEach
     public void setup() {
         super.setup();
         result = mock(UriTemplate.MatchResult.class);
+        when(result.getMatchedPathParameters()).thenReturn(matchedPathParameters);
     }
-
+    @Test
+    public void should_add_matched_path_parameter_to_builder() throws NoSuchMethodException {
+        parameters.put("param", List.of("param"));
+        callInjectable("getPathParam", String.class);
+        verify(builder).addMatchedPathParameters(matchedPathParameters);
+    }
     @Override
     protected Object initResource() {
         return Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{SubResourceMethods.class}, (proxy, method, args) -> {

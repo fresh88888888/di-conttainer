@@ -53,10 +53,6 @@ public class IntegrationTest extends ServletTest{
         when(context.getResource(eq(UsersApi.class))).thenReturn(new UsersApi());
         when(runtime.getProviders()).thenReturn(providers);
 
-        MultivaluedHashMap<String, String> parameters = new MultivaluedHashMap<>();
-        parameters.put("id", List.of("zhang.san"));
-        when(uriInfo.getPathParameters()).thenReturn(parameters);
-
         return new ResourceServlet(runtime);
     }
 

@@ -211,6 +211,7 @@ class ResourceHandler implements ResourceRouter.Resource {
     public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String httpMethod, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder) {
         String remaining = Optional.ofNullable(result.getRemaining()).orElse("");
         builder.addMatchedResource(resource.apply(context));
+        builder.addMatchedPathParameters(result.getMatchedPathParameters());
         return resourceMethods.findResourceMethods(remaining, httpMethod).or(() -> subResourceLocators.findSubResourceMethods(remaining, httpMethod, mediaTypes, context, builder));
     }
 
@@ -250,11 +251,32 @@ class SubResourceLocators {
         @Override
         public Optional<ResourceRouter.ResourceMethod> match(UriTemplate.MatchResult result, String httpMethod, String[] mediaTypes, ResourceContext context, UriInfoBuilder builder) {
             try {
+                builder.addMatchedPathParameters(result.getMatchedPathParameters());
                 Object subResource = MethodInvoker.invoke(method, context, builder);
-                return new ResourceHandler(subResource, uriTemplate).match(result, httpMethod, mediaTypes, context, builder);
+                return new ResourceHandler(subResource, uriTemplate).match(excludePathParameters(result), httpMethod, mediaTypes, context, builder);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+        private UriTemplate.MatchResult excludePathParameters(UriTemplate.MatchResult result) {
+            return new UriTemplate.MatchResult() {
+                @Override
+                public String getMatched() {
+                    return result.getMatched();
+                }
+                @Override
+                public String getRemaining() {
+                    return result.getRemaining();
+                }
+                @Override
+                public Map<String, String> getMatchedPathParameters() {
+                    return new HashMap<>();
+                }
+                @Override
+                public int compareTo(UriTemplate.MatchResult o) {
+                    return result.compareTo(o);
+                }
+            };
         }
 
         @Override
