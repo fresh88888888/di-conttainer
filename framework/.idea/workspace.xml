@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: 重构&#10;SubResourceLocator test case">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/InjectableCallerTest.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="SubResourceLocator test case">
+      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/IntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/ConverterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/DefaultResourceMethodTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/SubResourceLocatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,14 +223,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="206418000" />
-    </task>
-    <task id="LOCAL-00005" summary="restful api">
-      <created>1671790426108</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1671790426108</updated>
+      <workItem from="1671101970944" duration="206896000" />
     </task>
     <task id="LOCAL-00006" summary="restful api">
       <created>1671790533118</created>
@@ -570,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672805044101</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="SubResourceLocator test case">
+      <created>1672808925240</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1672808925241</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="分解任务" />
     <MESSAGE value="修改一个bug" />
     <MESSAGE value="根据与 Path 匹配结果，降序排列 RootResource，选择第一个的 RootResource" />
     <MESSAGE value="如果没有匹配的 RootResource，则构造 404 的 Response &#10;如果返回的 RootResource 中无法匹配剩余 Path，则构造 404 的 Response &#10;如果 ResourceMethod 返回 null，则构造 204 的 Response" />
@@ -613,7 +610,8 @@
     <MESSAGE value="TODO: injection - can inject resource context itself" />
     <MESSAGE value="TODO: injection - get injectable from resource context&#10;TODO: injection - can inject uri info built from uri info builder" />
     <MESSAGE value="TODO: 重构&#10;SubResourceLocator test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: 重构&#10;SubResourceLocator test case" />
+    <MESSAGE value="SubResourceLocator test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="SubResourceLocator test case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

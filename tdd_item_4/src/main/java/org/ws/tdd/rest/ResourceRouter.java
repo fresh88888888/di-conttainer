@@ -3,23 +3,15 @@ package org.ws.tdd.rest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.HttpMethod;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.core.UriInfo;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
-import java.lang.reflect.Type;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-import static org.ws.tdd.rest.MethodInvoker.ValueConverter.singleValued;
 
 interface ResourceRouter {
     OutboundResponse dispatch(HttpServletRequest req, ResourceContext resourceContext);
@@ -141,6 +133,7 @@ class DefaultResourceMethod implements ResourceRouter.ResourceMethod {
         this.httpMethod = Arrays.stream(method.getAnnotations()).filter(a -> a.annotationType().isAnnotationPresent(HttpMethod.class))
                 .findFirst().get().annotationType().getAnnotation(HttpMethod.class).value();
     }
+
     @Override
     public UriTemplate getUriTemplate() {
         return uriTemplate;
@@ -156,11 +149,13 @@ class DefaultResourceMethod implements ResourceRouter.ResourceMethod {
         Object result = MethodInvoker.invoke(method, context, builder);
         return result != null ? new GenericEntity<>(result, method.getGenericReturnType()) : null;
     }
+
     @Override
     public String toString() {
         return method.getDeclaringClass().getSimpleName() + "." + method.getName();
     }
 }
+
 class HeadResourceMethod implements ResourceRouter.ResourceMethod {
     private ResourceRouter.ResourceMethod method;
 
