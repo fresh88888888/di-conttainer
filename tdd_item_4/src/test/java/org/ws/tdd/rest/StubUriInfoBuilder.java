@@ -7,6 +7,10 @@ import java.util.List;
 
 class StubUriInfoBuilder implements UriInfoBuilder {
     private List<Object> matchedResults = new ArrayList<>();
+    private UriInfo uriInfo;
+    public StubUriInfoBuilder(UriInfo uriInfo) {
+        this.uriInfo = uriInfo;
+    }
 
     public StubUriInfoBuilder() {
     }
@@ -23,6 +27,6 @@ class StubUriInfoBuilder implements UriInfoBuilder {
 
     @Override
     public UriInfo createUriInfo() {
-        return null;
+        return uriInfo;
     }
 }
