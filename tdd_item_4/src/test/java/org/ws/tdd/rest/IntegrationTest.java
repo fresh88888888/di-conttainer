@@ -98,7 +98,6 @@ public class IntegrationTest extends ServletTest{
             }
         });
     }
-    //TODO: get url (root/sub)
     @Test
     public void should_return_to_string_of_user_if_user_exist(){
         HttpResponse<String> response = get("/users/zhang.san");

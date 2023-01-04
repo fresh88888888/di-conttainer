@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="TODO: add /to path if not have annotation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/IntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/IntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/StubUriInfoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/test/java/org/ws/tdd/rest/StubUriInfoBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,14 +222,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="213014000" />
-    </task>
-    <task id="LOCAL-00009" summary="throw exception mapper">
-      <created>1672045390289</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1672045390289</updated>
+      <workItem from="1671101970944" duration="213053000" />
     </task>
     <task id="LOCAL-00010" summary="    //TODO: providers gets exception mapper&#10;    //TODO: runtime delegate&#10;    //TODO: header delegate&#10;    //TODO: providers gets MessageBodyWriter&#10;    //TODO: MessageBodyWriter write">
       <created>1672116140650</created>
@@ -568,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672819108758</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="TODO: add /to path if not have annotation">
+      <created>1672821879491</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1672821879491</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="如果没有匹配的 RootResource，则构造 404 的 Response &#10;如果返回的 RootResource 中无法匹配剩余 Path，则构造 404 的 Response &#10;如果 ResourceMethod 返回 null，则构造 204 的 Response" />
     <MESSAGE value="TODO: if path not match uri template ,return empty" />
     <MESSAGE value="TODO if path match uri template , return matched result" />
     <MESSAGE value="TODO: path match with variable" />
@@ -611,7 +609,8 @@
     <MESSAGE value="SubResourceLocator test case" />
     <MESSAGE value="TODO: get url no in exist" />
     <MESSAGE value="TODO: get url throw exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: get url throw exception" />
+    <MESSAGE value="TODO: add /to path if not have annotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO: add /to path if not have annotation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
