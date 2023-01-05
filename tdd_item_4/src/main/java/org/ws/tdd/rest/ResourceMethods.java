@@ -43,6 +43,7 @@ public class ResourceMethods {
 
     class OptionsResourceMethod implements ResourceRouter.ResourceMethod {
         private String path;
+        private static final List<String> methods = List.of(HttpMethod.GET, HttpMethod.OPTIONS, HttpMethod.HEAD, HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.PATCH, HttpMethod.POST);
 
         public OptionsResourceMethod(String path) {
             this.path = path;
@@ -59,7 +60,6 @@ public class ResourceMethods {
         }
 
         private Set<String> findAllowedMethods() {
-            List<String> methods = List.of(HttpMethod.GET, HttpMethod.OPTIONS, HttpMethod.HEAD, HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.PATCH, HttpMethod.POST);
             Set<String> allowed = methods.stream().filter(method -> findMethod(path, method).isPresent()).collect(Collectors.toSet());
             allowed.add(HttpMethod.OPTIONS);
             if (allowed.contains(HttpMethod.GET)) {

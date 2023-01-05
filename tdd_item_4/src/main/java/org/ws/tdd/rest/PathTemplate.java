@@ -8,12 +8,10 @@ public class PathTemplate implements UriTemplate {
     private Pattern pattern;
     private int VariableGroupStartFrom;
     private PathVariables pathVariables = new PathVariables();
-
     public PathTemplate(String template) {
         this.pattern = Pattern.compile(group(pathVariables.template(template)) + "(/.*)?");
         VariableGroupStartFrom = 2;
     }
-
     @Override
     public Optional<MatchResult> match(String path) {
         Matcher matcher = pattern.matcher(path);

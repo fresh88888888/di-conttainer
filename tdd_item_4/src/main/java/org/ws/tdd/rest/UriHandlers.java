@@ -14,8 +14,7 @@ public class UriHandlers {
         return matched(path, handlers, r -> true).flatMap(r -> mapper.apply(r.matched(), r.handler()));
     }
 
-    private record Result<T extends UriHandler>(Optional<UriTemplate.MatchResult> matched, T handler,
-                                                Function<UriTemplate.MatchResult, Boolean> matchFunction) implements Comparable<Result<T>> {
+    private record Result<T extends UriHandler>(Optional<UriTemplate.MatchResult> matched, T handler, Function<UriTemplate.MatchResult, Boolean> matchFunction) implements Comparable<Result<T>> {
         @Override
         public int compareTo(Result<T> o) {
             return matched.flatMap(x -> o.matched.map(x::compareTo)).orElse(0);

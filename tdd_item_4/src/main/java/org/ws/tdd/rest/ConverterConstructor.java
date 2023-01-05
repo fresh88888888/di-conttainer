@@ -7,8 +7,7 @@ public class ConverterConstructor {
     public static Optional<Object> convert(Class<?> converter, String value) {
         try {
             return Optional.of(converter.getConstructor(String.class).newInstance(value));
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
-                 NoSuchMethodException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             return Optional.empty();
         }
     }

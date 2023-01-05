@@ -8,7 +8,6 @@ import jakarta.ws.rs.ext.Providers;
 import org.tdd.item.Context;
 
 public interface Runtime {
-
     Providers getProviders();
     ResourceContext createResourceContext(HttpServletRequest req, HttpServletResponse resp);
     Context getApplicationContext();

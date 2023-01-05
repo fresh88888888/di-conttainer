@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="重构">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ConverterConstructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ConverterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/DefaultResourceMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/DefaultResourceRouter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/HeadResourceMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/PathTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/PrimitiveConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/SubResourceLocators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandlers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ConverterConstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ConverterConstructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/DefaultResourceMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/DefaultResourceMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/DefaultResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/DefaultResourceRouter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/MethodInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/MethodInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/OutboundResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/OutboundResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/PathTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/PathTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/PrimitiveConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/PrimitiveConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/ResourceMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/Runtime.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/Runtime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriHandlers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_4/src/main/java/org/ws/tdd/rest/UriTemplate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +41,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tdd_item_4" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tdd_item_4" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tdd_item_4" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -233,14 +243,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671101969610</updated>
-      <workItem from="1671101970944" duration="223335000" />
-    </task>
-    <task id="LOCAL-00013" summary="设计架构愿景">
-      <created>1672133035064</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1672133035064</updated>
+      <workItem from="1671101970944" duration="224247000" />
     </task>
     <task id="LOCAL-00014" summary="分解任务">
       <created>1672203263610</created>
@@ -578,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672884795536</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="重构">
+      <created>1672908755174</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1672908755174</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

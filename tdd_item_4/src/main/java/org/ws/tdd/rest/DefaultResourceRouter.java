@@ -12,12 +12,10 @@ import java.util.Optional;
 public class DefaultResourceRouter implements ResourceRouter {
     private Runtime runtime;
     private List<Resource> rootResources;
-
     public DefaultResourceRouter(Runtime runtime, List<Resource> rootResources) {
         this.runtime = runtime;
         this.rootResources = rootResources;
     }
-
     @Override
     public OutboundResponse dispatch(HttpServletRequest req, ResourceContext resourceContext) {
         String path = req.getServletPath();

@@ -13,7 +13,6 @@ public class DefaultResourceMethod implements ResourceRouter.ResourceMethod {
     private String httpMethod;
     private UriTemplate uriTemplate;
     private Method method;
-
     public DefaultResourceMethod(Method method) {
         this.method = method;
         this.uriTemplate = new PathTemplate(Optional.ofNullable(method.getAnnotation(Path.class)).map(Path::value).orElse(""));

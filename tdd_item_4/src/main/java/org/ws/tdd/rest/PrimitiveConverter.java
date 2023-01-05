@@ -17,7 +17,6 @@ public class PrimitiveConverter {
             boolean.class, singleValued(Boolean::parseBoolean),
             String.class, singleValued(s -> s)
     );
-
     public static Optional<Object> converter(Parameter parameter, List<String> values) {
         return Optional.ofNullable(primitives.get(parameter.getType())).map(c -> c.fromString(values));
     }

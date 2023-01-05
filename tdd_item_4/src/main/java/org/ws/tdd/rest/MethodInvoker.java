@@ -67,10 +67,9 @@ public class MethodInvoker {
     }
 
     interface ValueConverter<T> {
+        T fromString(List<String> values);
         static <T> ValueConverter<T> singleValued(Function<String, T> converter) {
             return values -> converter.apply(values.get(0));
         }
-
-        T fromString(List<String> values);
     }
 }
