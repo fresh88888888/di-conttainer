@@ -22,7 +22,6 @@ public class ResourceServlet extends HttpServlet {
         this.runtime = runtime;
         this.providers = runtime.getProviders();
     }
-
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
         ResourceRouter router = runtime.getResourceRouter();

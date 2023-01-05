@@ -110,6 +110,8 @@ public class IntegrationTest extends ServletTest{
         HttpResponse<String> response = get("/users/lisi");
         assertEquals(response.statusCode(), 404);
     }
+    //TODO: supporting utils runtime, uriInfo, response builder, exception mapper, message body writer
+    //TODO: Resource Context (DI)
 }
 record UserData(String name, String email){
 }

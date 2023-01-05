@@ -3,6 +3,7 @@ package org.ws.tdd.rest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.HttpMethod;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.HttpHeaders;
@@ -121,7 +122,6 @@ class ResourceMethods {
         }
     }
 }
-
 class DefaultResourceMethod implements ResourceRouter.ResourceMethod {
     private String httpMethod;
     private UriTemplate uriTemplate;
@@ -254,6 +254,8 @@ class SubResourceLocators {
                 builder.addMatchedPathParameters(result.getMatchedPathParameters());
                 Object subResource = MethodInvoker.invoke(method, context, builder);
                 return new ResourceHandler(subResource, uriTemplate).match(excludePathParameters(result), httpMethod, mediaTypes, context, builder);
+            } catch (WebApplicationException e) {
+                throw e;
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -278,7 +280,6 @@ class SubResourceLocators {
                 }
             };
         }
-
         @Override
         public String toString() {
             return method.getDeclaringClass().getSimpleName() + "." + method.getName();

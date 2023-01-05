@@ -1,9 +1,6 @@
 package org.ws.tdd.rest;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.GenericEntity;
@@ -17,8 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DefaultResourceMethodTest extends InjectableCallerTest {
 
@@ -26,6 +22,9 @@ public class DefaultResourceMethodTest extends InjectableCallerTest {
     protected Object initResource() {
         return Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{CallableResourceMethods.class}, (proxy, method, args) -> {
             lastCal = new LastCal(getMethodName(method.getName(), Arrays.stream(method.getParameters()).map(Parameter::getType).toList()), args != null ? List.of(args) : List.of());
+            if(method.getName().equals("throwWebApplicationException")){
+                throw new WebApplicationException(300);
+            }
             return method.getName().equals("getList") ? new ArrayList<>() : null;
         });
     }
@@ -50,7 +49,17 @@ public class DefaultResourceMethodTest extends InjectableCallerTest {
 
         assertNull(resourceMethod.call(context, builder));
     }
-
+    @Test
+    public void should_not_wrap_around_web_application_exception() throws NoSuchMethodException {
+        parameters.put("param", List.of("param"));
+        try {
+            callInjectable("throwWebApplicationException", String.class);
+        }catch (WebApplicationException ex){
+            assertEquals(300, ex.getResponse().getStatus());
+        }catch (Exception ex){
+            fail();
+        }
+    }
     @Override
     public void callInjectable(String method, Class<?> type) throws NoSuchMethodException {
         DefaultResourceMethod resourceMethod = getResourceMethod(method, type);
@@ -127,6 +136,8 @@ public class DefaultResourceMethodTest extends InjectableCallerTest {
 
         @GET
         String getQueryParam(@QueryParam("param") Convert value);
+       @GET
+        String throwWebApplicationException(@PathParam("param") String value);
     }
 
 }

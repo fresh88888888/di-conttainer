@@ -7,6 +7,5 @@ import java.lang.annotation.Annotation;
 
 abstract class OutboundResponse extends Response {
     abstract GenericEntity getGenericEntity();
-
     abstract Annotation[] getAnnotations();
 }

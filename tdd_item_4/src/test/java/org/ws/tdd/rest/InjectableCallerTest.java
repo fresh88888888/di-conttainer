@@ -3,6 +3,7 @@ package org.ws.tdd.rest;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.MultivaluedHashMap;
 import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.ext.RuntimeDelegate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
@@ -24,6 +25,7 @@ public abstract class InjectableCallerTest {
     protected MultivaluedHashMap<String, String> parameters;
     protected LastCal lastCal;
     protected DefaultResourceMethodTest.SomeServiceInContext service;
+    protected RuntimeDelegate delegate;
     private Object resource;
 
     @BeforeEach
@@ -42,6 +44,10 @@ public abstract class InjectableCallerTest {
         when(uriInfo.getPathParameters()).thenReturn(parameters);
         when(uriInfo.getQueryParameters()).thenReturn(parameters);
         when(context.getResource(eq(DefaultResourceMethodTest.SomeServiceInContext.class))).thenReturn(service);
+        delegate = mock(RuntimeDelegate.class);
+        RuntimeDelegate.setInstance(delegate);
+
+        when(delegate.createResponseBuilder()).thenReturn(new StubResponseBuilder());
     }
 
     protected static String getMethodName(String name, List<? extends Class<?>> classStream) {

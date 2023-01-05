@@ -2,6 +2,7 @@ package org.ws.tdd.rest;
 
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.UriInfo;
 
@@ -27,7 +28,12 @@ public class MethodInvoker {
             UriInfo uriInfo = builder.createUriInfo();
             return method.invoke(builder.getLastMatchedResource(), Arrays.stream(method.getParameters())
                     .map(parameter -> injectParameter(parameter, uriInfo).or(() -> injectContext(parameter, context, uriInfo)).orElse(null)).toArray(Object[]::new));
-        } catch (IllegalAccessException | InvocationTargetException e) {
+        } catch (InvocationTargetException e){
+           if(e.getCause() instanceof WebApplicationException){
+                throw (WebApplicationException) e.getCause();
+           }
+           throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }

@@ -5,6 +5,7 @@ import jakarta.ws.rs.container.ResourceContext;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.ext.RuntimeDelegate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +16,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.*;
 
 public class SubResourceLocatorTest extends InjectableCallerTest {
@@ -31,16 +34,30 @@ public class SubResourceLocatorTest extends InjectableCallerTest {
     public void should_add_matched_path_parameter_to_builder() throws NoSuchMethodException {
         parameters.put("param", List.of("param"));
         callInjectable("getPathParam", String.class);
+
         verify(builder).addMatchedPathParameters(matchedPathParameters);
+    }
+    @Test
+    public void should_not_wrap_around_web_application_exception() throws NoSuchMethodException {
+        parameters.put("param", List.of("param"));
+        try {
+            callInjectable("throwWebApplicationException", String.class);
+        }catch (WebApplicationException ex){
+            assertEquals(300, ex.getResponse().getStatus());
+        }catch (Exception ex){
+            fail();
+        }
     }
     @Override
     protected Object initResource() {
         return Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{SubResourceMethods.class}, (proxy, method, args) -> {
             lastCal = new LastCal(getMethodName(method.getName(), Arrays.stream(method.getParameters()).map(Parameter::getType).toList()), args != null ? List.of(args) : List.of());
+            if(method.getName().equals("throwWebApplicationException")){
+                throw new WebApplicationException(300);
+            }
             return new Message();
         });
     }
-
     @Override
     protected void callInjectable(String method, Class<?> type) throws NoSuchMethodException {
         SubResourceLocators.SubResourceLocator locator = new SubResourceLocators.SubResourceLocator(SubResourceMethods.class.getMethod(method, type));
@@ -118,6 +135,8 @@ public class SubResourceLocatorTest extends InjectableCallerTest {
         @Path("/message")
         @Produces(MediaType.TEXT_PLAIN)
         Message getContext(@Context UriInfo uriInfo);
+        @Path("/message/{param}")
+        Message throwWebApplicationException(@PathParam("param") String value);
     }
     static class Message {
         @GET
