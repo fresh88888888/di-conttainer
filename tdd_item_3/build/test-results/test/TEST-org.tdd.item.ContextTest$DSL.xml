@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.ContextTest$DSL" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:57" hostname="umbrella" time="0.043">
+<testsuite name="org.tdd.item.ContextTest$DSL" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-01-05T08:49:28" hostname="umbrella" time="0.027">
   <properties/>
-  <testcase name="should_be_instance_as_its_declaration_type()" classname="org.tdd.item.ContextTest$DSL" time="0.019"/>
-  <testcase name="should_bind_instance_using_export_type()" classname="org.tdd.item.ContextTest$DSL" time="0.003"/>
-  <testcase name="should_bind_instance_with_qualifier()" classname="org.tdd.item.ContextTest$DSL" time="0.01"/>
-  <testcase name="should_bind_component_as_its_owner_type()" classname="org.tdd.item.ContextTest$DSL" time="0.002"/>
+  <testcase name="should_be_instance_as_its_declaration_type()" classname="org.tdd.item.ContextTest$DSL" time="0.015"/>
+  <testcase name="should_bind_instance_using_export_type()" classname="org.tdd.item.ContextTest$DSL" time="0.001"/>
+  <testcase name="should_bind_instance_with_qualifier()" classname="org.tdd.item.ContextTest$DSL" time="0.003"/>
+  <testcase name="should_bind_component_as_its_owner_type()" classname="org.tdd.item.ContextTest$DSL" time="0.001"/>
   <testcase name="should_bind_component_with_qualifier()" classname="org.tdd.item.ContextTest$DSL" time="0.001"/>
-  <testcase name="should_bind_component_using_export_type()" classname="org.tdd.item.ContextTest$DSL" time="0.002"/>
+  <testcase name="should_bind_component_using_export_type()" classname="org.tdd.item.ContextTest$DSL" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

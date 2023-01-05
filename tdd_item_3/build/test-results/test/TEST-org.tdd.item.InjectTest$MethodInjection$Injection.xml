@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.InjectTest$MethodInjection$Injection" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.014">
+<testsuite name="org.tdd.item.InjectTest$MethodInjection$Injection" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-01-05T08:49:29" hostname="umbrella" time="0.013">
   <properties/>
   <testcase name="should_inject_method_via_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
-  <testcase name="should_not_call_inject_method_if_override_with_no_inject()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
+  <testcase name="should_not_call_inject_method_if_override_with_no_inject()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.002"/>
   <testcase name="should_inject_provider_via_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_inject_dependencies_via_inject_method_from_superclass()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>
   <testcase name="should_include_provider_type_from_inject_method()" classname="org.tdd.item.InjectTest$MethodInjection$Injection" time="0.001"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.atinject.tck.auto.Convertible$PrivateTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.001">
+<testsuite name="org.atinject.tck.auto.Convertible$PrivateTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-01-05T08:49:29" hostname="umbrella" time="0.001">
   <properties/>
   <testcase name="testSupertypePrivateMethodInjected" classname="org.atinject.tck.auto.Convertible$PrivateTests" time="0.0"/>
-  <testcase name="testPrivateMethodInjectedEvenWhenSimilarMethodLacksAnnotation" classname="org.atinject.tck.auto.Convertible$PrivateTests" time="0.0"/>
+  <testcase name="testPrivateMethodInjectedEvenWhenSimilarMethodLacksAnnotation" classname="org.atinject.tck.auto.Convertible$PrivateTests" time="0.001"/>
   <testcase name="testPackagePrivateMethodInjectedSamePackage" classname="org.atinject.tck.auto.Convertible$PrivateTests" time="0.0"/>
   <testcase name="testSimilarPrivateMethodInjectedOnlyOnce" classname="org.atinject.tck.auto.Convertible$PrivateTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

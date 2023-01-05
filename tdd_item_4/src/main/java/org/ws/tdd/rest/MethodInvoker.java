@@ -74,36 +74,3 @@ public class MethodInvoker {
         T fromString(List<String> values);
     }
 }
-class PrimitiveConverter {
-    private static Map<Type, MethodInvoker.ValueConverter<Object>> primitives = Map.of(
-            int.class, singleValued(Integer::parseInt),
-            double.class, singleValued(Double::parseDouble),
-            short.class, singleValued(Short::parseShort),
-            byte.class, singleValued(Byte::parseByte),
-            boolean.class, singleValued(Boolean::parseBoolean),
-            String.class, singleValued(s -> s)
-    );
-
-    public static Optional<Object> converter(Parameter parameter, List<String> values) {
-        return Optional.ofNullable(primitives.get(parameter.getType())).map(c -> c.fromString(values));
-    }
-}
-class ConverterFactory {
-    public static Optional<Object> convert(Class<?> converter, String value) {
-        try {
-            return Optional.of(converter.getMethod("valueOf", String.class).invoke(null, value));
-        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-            return Optional.empty();
-        }
-    }
-}
-class ConverterConstructor {
-    public static Optional<Object> convert(Class<?> converter, String value) {
-        try {
-            return Optional.of(converter.getConstructor(String.class).newInstance(value));
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
-                 NoSuchMethodException e) {
-            return Optional.empty();
-        }
-    }
-}

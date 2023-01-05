@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.tdd.item.InjectTest$FieldInjection$Injection" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-15T09:39:58" hostname="umbrella" time="0.009">
+<testsuite name="org.tdd.item.InjectTest$FieldInjection$Injection" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-01-05T08:49:29" hostname="umbrella" time="0.008">
   <properties/>
   <testcase name="should_inject_provider_via_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
   <testcase name="should_include_dependency_from_field_dependencies()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
   <testcase name="should_inject_dependency_via_subclass_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
   <testcase name="should_include_provider_type_from_inject_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
-  <testcase name="should_inject_dependency_via_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.002"/>
+  <testcase name="should_inject_dependency_via_field()" classname="org.tdd.item.InjectTest$FieldInjection$Injection" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
