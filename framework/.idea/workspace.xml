@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="重构">
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="增加请求接口信息收集-动态代理类">
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/adaptor/CD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/adaptor/CDAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/adaptor/ITarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/dynamic/proxy/MetricsCollectorProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/dynamic/proxy/MetricsCollectorProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,14 +242,8 @@
       <updated>1671101969610</updated>
       <workItem from="1671101970944" duration="224900000" />
       <workItem from="1675341645031" duration="116000" />
-      <workItem from="1688188028165" duration="1723000" />
-    </task>
-    <task id="LOCAL-00016" summary="修改一个bug">
-      <created>1672213216778</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1672213216778</updated>
+      <workItem from="1688188028165" duration="1816000" />
+      <workItem from="1688194039282" duration="1157000" />
     </task>
     <task id="LOCAL-00017" summary="修改一个bug">
       <created>1672216754983</created>
@@ -585,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688189703296</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="增加请求接口信息收集-动态代理类">
+      <created>1688189824810</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1688189824810</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TODO: if path not match uri template ,return empty" />
     <MESSAGE value="TODO if path match uri template , return matched result" />
     <MESSAGE value="TODO: path match with variable" />
     <MESSAGE value="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable" />
@@ -628,7 +630,8 @@
     <MESSAGE value="TODO: get url throw exception" />
     <MESSAGE value="TODO: add /to path if not have annotation" />
     <MESSAGE value="重构" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构" />
+    <MESSAGE value="增加请求接口信息收集-动态代理类" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加请求接口信息收集-动态代理类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
