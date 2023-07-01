@@ -4,6 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * 请求接口信息收集-动态代理类
+ */
 public class MetricsCollectorProxy {
     private final MetricsCollector metricsCollector;
 
