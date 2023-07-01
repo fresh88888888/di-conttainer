@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="例子：享元模式">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessPiece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessPieceUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessPieceUnitFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/observer/ConcreteObserverOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/observer/ConcreteObserverTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/observer/ConcreteSubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/observer/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/observer/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/observer/Subject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,14 +247,8 @@
       <workItem from="1675341645031" duration="116000" />
       <workItem from="1688188028165" duration="1816000" />
       <workItem from="1688194039282" duration="1237000" />
-      <workItem from="1688201363454" duration="1356000" />
-    </task>
-    <task id="LOCAL-00018" summary="根据与 Path 匹配结果，降序排列 RootResource，选择第一个的 RootResource">
-      <created>1672217337608</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1672217337608</updated>
+      <workItem from="1688201363454" duration="1503000" />
+      <workItem from="1688203564048" duration="903000" />
     </task>
     <task id="LOCAL-00019" summary="如果没有匹配的 RootResource，则构造 404 的 Response &#10;如果返回的 RootResource 中无法匹配剩余 Path，则构造 404 的 Response &#10;如果 ResourceMethod 返回 null，则构造 204 的 Response">
       <created>1672221489119</created>
@@ -590,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688195265867</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="例子：享元模式">
+      <created>1688202830508</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1688202830508</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
