@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="增加请求接口信息收集-动态代理类">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/adaptor/CD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/adaptor/CDAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/adaptor/ITarget.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="例子：享元模式">
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessPiece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessPieceUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/flyweight/ChessPieceUnitFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,14 +244,8 @@
       <workItem from="1671101970944" duration="224900000" />
       <workItem from="1675341645031" duration="116000" />
       <workItem from="1688188028165" duration="1816000" />
-      <workItem from="1688194039282" duration="1157000" />
-    </task>
-    <task id="LOCAL-00017" summary="修改一个bug">
-      <created>1672216754983</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1672216754983</updated>
+      <workItem from="1688194039282" duration="1237000" />
+      <workItem from="1688201363454" duration="1356000" />
     </task>
     <task id="LOCAL-00018" summary="根据与 Path 匹配结果，降序排列 RootResource，选择第一个的 RootResource">
       <created>1672217337608</created>
@@ -588,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688189824810</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="例子：适配器模式">
+      <created>1688195265867</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1688195265867</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,8 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TODO if path match uri template , return matched result" />
-    <MESSAGE value="TODO: path match with variable" />
     <MESSAGE value="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable" />
     <MESSAGE value="TODO: comparing result, with match literal, variable and specific variable" />
     <MESSAGE value="TODO: get uri template from path annotation" />
@@ -631,7 +631,9 @@
     <MESSAGE value="TODO: add /to path if not have annotation" />
     <MESSAGE value="重构" />
     <MESSAGE value="增加请求接口信息收集-动态代理类" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加请求接口信息收集-动态代理类" />
+    <MESSAGE value="例子：适配器模式" />
+    <MESSAGE value="例子：享元模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="例子：享元模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
