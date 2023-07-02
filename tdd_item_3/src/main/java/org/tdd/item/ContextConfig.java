@@ -13,8 +13,8 @@ import static org.tdd.item.ContextConfigException.*;
 import static org.tdd.item.ContextConfigException.unknownScope;
 
 public class ContextConfig {
-    private Map<Component, ComponentProvider<?>> components = new HashMap<>();
-    private Map<Class<?>, ScopeProvider> scopes = new HashMap<>();
+    private final Map<Component, ComponentProvider<?>> components = new HashMap<>();
+    private final Map<Class<?>, ScopeProvider> scopes = new HashMap<>();
 
     public ContextConfig() {
         scopes.put(Singleton.class, SingletonProvider::new);
