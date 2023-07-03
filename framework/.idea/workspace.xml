@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="例子：开闭原则">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/ConfigSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/MysqlConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/ScheduledUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Updater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/ZookeeperConfigSource.java" afterDir="false" />
+    <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="例子: 接口隔离原则">
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/ApiMetrics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/DbMetrics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/SimpleHttpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Viewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/.gradle/7.4.2/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/MysqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/MysqlConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/RedisConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.44252872",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults",
     "spring.configuration.checksum": "34d5dcf0b30aeacac95ca8c5c592cd12"
   }
 }]]></component>
@@ -258,21 +255,7 @@
       <workItem from="1688201363454" duration="1503000" />
       <workItem from="1688203564048" duration="8692000" />
       <workItem from="1688304907536" duration="327000" />
-      <workItem from="1688309113328" duration="2451000" />
-    </task>
-    <task id="LOCAL-00022" summary="TODO: path match with variable">
-      <created>1672279300721</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1672279300721</updated>
-    </task>
-    <task id="LOCAL-00023" summary="TODO: path match with variable with specific pattern&#10;TODO: throw exception if variable undefined&#10;TODO: comparing result, with match literal, variable and specific variable">
-      <created>1672283075997</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1672283075997</updated>
+      <workItem from="1688309113328" duration="4046000" />
     </task>
     <task id="LOCAL-00024" summary="TODO: comparing result, with match literal, variable and specific variable">
       <created>1672285073637</created>
@@ -603,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688310001885</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="例子: 接口隔离原则">
+      <created>1688311730343</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1688311730343</updated>
+    </task>
+    <task id="LOCAL-00072" summary="例子: 接口隔离原则">
+      <created>1688311750308</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1688311750308</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +668,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TODO: find resource method, matches the http request and http method" />
     <MESSAGE value="TODO: if sub resource locator matches uri, using it to do follow up matching" />
     <MESSAGE value="TODO: ResourceMethods test case" />
     <MESSAGE value="TODO: SubResourceLocators test case" />
@@ -696,7 +692,8 @@
     <MESSAGE value="例子：观察者/监听者模式" />
     <MESSAGE value="例子：状态模式" />
     <MESSAGE value="例子：开闭原则" />
-    <option name="LAST_COMMIT_MESSAGE" value="例子：开闭原则" />
+    <MESSAGE value="例子: 接口隔离原则" />
+    <option name="LAST_COMMIT_MESSAGE" value="例子: 接口隔离原则" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

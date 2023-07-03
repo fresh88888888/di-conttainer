@@ -1,6 +1,8 @@
 package org.isp;
 
-public class RedisConfig implements Updater{
+import java.util.Map;
+
+public class RedisConfig implements Updater, Viewer{
     //...省略其他配置信息...
     private ConfigSource configSource;
 
@@ -10,6 +12,18 @@ public class RedisConfig implements Updater{
 
     @Override
     public void update() {
-        //..
+        //...
+    }
+
+    @Override
+    public String outputInPlainText() {
+        //...
+        return null;
+    }
+
+    @Override
+    public Map<String, String> output() {
+        //...
+        return null;
     }
 }
