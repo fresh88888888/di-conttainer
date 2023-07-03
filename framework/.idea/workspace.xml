@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafaebbb-ae41-4003-afea-7dd8312c0431" name="Changes" comment="例子: 接口隔离原则">
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/ApiMetrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/DbMetrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/SimpleHttpServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Viewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/di/InboxSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/di/MessageSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/di/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/di/SmsSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/MysqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/MysqlConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tdd_item_3/src/main/java/org/isp/RedisConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,14 +252,7 @@
       <workItem from="1688201363454" duration="1503000" />
       <workItem from="1688203564048" duration="8692000" />
       <workItem from="1688304907536" duration="327000" />
-      <workItem from="1688309113328" duration="4046000" />
-    </task>
-    <task id="LOCAL-00024" summary="TODO: comparing result, with match literal, variable and specific variable">
-      <created>1672285073637</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1672285073637</updated>
+      <workItem from="1688309113328" duration="5053000" />
     </task>
     <task id="LOCAL-00025" summary="TODO: comparing result, with match literal, variable and specific variable">
       <created>1672288747237</created>
@@ -600,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688311750308</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="例子: 接口隔离原则">
+      <created>1688349504978</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1688349504979</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
